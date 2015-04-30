@@ -1,0 +1,22 @@
+//
+//  Framework.pch
+//  Framework
+//
+//  Created by guojiang on 19/9/14.
+//  Copyright (c) 2014年 guojiang. All rights reserved.
+//
+
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "Macro.h"
+
+    //define this constant if you want to use Masonry without the 'mas_' prefix
+    #define MAS_SHORTHAND
+
+    //define this constant if you want to enable auto-boxing for default syntax
+    #define MAS_SHORTHAND_GLOBALS
+    
+    #import "Masonry.h"
+#endif

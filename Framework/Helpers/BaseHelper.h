@@ -1,0 +1,21 @@
+//
+//  BaseHelper.h
+//  Framework
+//
+//  Created by gejiangs on 15/2/9.
+//  Copyright (c) 2015年 guojiang. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "JSONModelArray.h"
+#import "JSONModel.h"
+#import "BaseRequestOperator.h"
+
+@interface BaseHelper : NSObject
+
+@property (nonatomic, strong) BaseRequestOperator *requestOperator;
+
+-(void)requestGroupWithManagers:(NSArray *)managers
+                     completion:(void(^)())completion;
+
+@end
