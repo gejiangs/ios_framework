@@ -69,10 +69,6 @@
                  failure:(requestCompletionFailureHandler)failure
 {
     
-    self.successHandler = success;
-    self.failureHandler = failure;
-    
-    
     [self cancelAllRequest];
     
     self.afRequest = [self getRequestWithMethod:method url:url params:params success:success failure:failure];
@@ -142,11 +138,11 @@
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-         success(YES, responseObject);
+         self.successHandler(YES, responseObject);
      }
       failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
-         failure(error);
+         self.failureHandler(error);
      }];
     
     if (progress) {
@@ -240,6 +236,10 @@
                                         failure:(requestCompletionFailureHandler)failure
 {
     
+    self.successHandler = success;
+    self.failureHandler = failure;
+    
+    
     AFHTTPRequestSerializer <AFURLRequestSerialization> * requestSerializer = [AFHTTPRequestSerializer serializer];
     NSMutableURLRequest *request = [requestSerializer requestWithMethod:method
                                                               URLString:[[NSURL URLWithString:url] absoluteString]
@@ -260,11 +260,11 @@
      {
          //此处做返回判断YES、NO
          //if([[responseObject objectForKey:@"code"] isEqualToString:@"200"])
-         success(YES, responseObject);
+         self.successHandler(YES, responseObject);
      }
      failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
-         failure(error);
+         self.failureHandler(error);
      }];
     
     return operation;
