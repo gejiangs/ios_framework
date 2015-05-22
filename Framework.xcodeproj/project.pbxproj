@@ -38,6 +38,8 @@
 		67F5FD671A036D0800C51428 /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F5FD621A036D0800C51428 /* zbar-samples.png */; };
 		67F5FD741A03729A00C51428 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F5FD711A03725600C51428 /* AVFoundation.framework */; };
 		67F5FD761A0372F100C51428 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F5FD751A0372F100C51428 /* libiconv.dylib */; };
+		AD2DCC6F1B0EFCDC00F12F07 /* ArchiveFile.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2DCC6C1B0EFCDC00F12F07 /* ArchiveFile.m */; };
+		AD2DCC701B0EFCDC00F12F07 /* UIActionSheet+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2DCC6E1B0EFCDC00F12F07 /* UIActionSheet+Utils.m */; };
 		AD3121F21AD3DE59004E943D /* NSObject+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3121F11AD3DE59004E943D /* NSObject+Utils.m */; };
 		AD329AEA1AD4C8F7000BA4B9 /* ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD329AE91AD4C8F7000BA4B9 /* ToastView.m */; };
 		AD329AEF1AD50271000BA4B9 /* HUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD329AED1AD50271000BA4B9 /* HUDViewController.m */; };
@@ -48,6 +50,7 @@
 		AD370F691ACB91C4003589AB /* RequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD370F651ACB91C4003589AB /* RequestViewController.xib */; };
 		AD370F6D1ACB94E3003589AB /* AnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD370F6C1ACB94E3003589AB /* AnimateViewController.m */; };
 		AD370F701ACB951B003589AB /* CustomPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD370F6F1ACB951B003589AB /* CustomPickView.m */; };
+		AD3D428D1AFA119800BF341F /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3D428C1AFA119800BF341F /* BannerView.m */; };
 		AD474D171ACA86FA004D2733 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD474D151ACA86FA004D2733 /* ViewController.m */; };
 		AD474D331ACA8CA6004D2733 /* QQModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD474D321ACA8CA6004D2733 /* QQModel.m */; };
 		AD474D361ACA9253004D2733 /* QQHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AD474D351ACA9253004D2733 /* QQHelper.m */; };
@@ -208,6 +211,10 @@
 		67F5FD621A036D0800C51428 /* zbar-samples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-samples.png"; sourceTree = "<group>"; };
 		67F5FD711A03725600C51428 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		67F5FD751A0372F100C51428 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		AD2DCC6B1B0EFCDC00F12F07 /* ArchiveFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveFile.h; sourceTree = "<group>"; };
+		AD2DCC6C1B0EFCDC00F12F07 /* ArchiveFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveFile.m; sourceTree = "<group>"; };
+		AD2DCC6D1B0EFCDC00F12F07 /* UIActionSheet+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Utils.h"; sourceTree = "<group>"; };
+		AD2DCC6E1B0EFCDC00F12F07 /* UIActionSheet+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Utils.m"; sourceTree = "<group>"; };
 		AD3121F01AD3DE59004E943D /* NSObject+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Utils.h"; sourceTree = "<group>"; };
 		AD3121F11AD3DE59004E943D /* NSObject+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Utils.m"; sourceTree = "<group>"; };
 		AD329AE81AD4C8F7000BA4B9 /* ToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastView.h; sourceTree = "<group>"; };
@@ -225,6 +232,8 @@
 		AD370F6C1ACB94E3003589AB /* AnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimateViewController.m; sourceTree = "<group>"; };
 		AD370F6E1ACB951B003589AB /* CustomPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPickView.h; sourceTree = "<group>"; };
 		AD370F6F1ACB951B003589AB /* CustomPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPickView.m; sourceTree = "<group>"; };
+		AD3D428B1AFA119800BF341F /* BannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
+		AD3D428C1AFA119800BF341F /* BannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
 		AD474D141ACA86FA004D2733 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		AD474D151ACA86FA004D2733 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AD474D311ACA8CA6004D2733 /* QQModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQModel.h; sourceTree = "<group>"; };
@@ -822,6 +831,8 @@
 				ADC7273F1AB02E4900B567C1 /* BaseView.m */,
 				AD329AE81AD4C8F7000BA4B9 /* ToastView.h */,
 				AD329AE91AD4C8F7000BA4B9 /* ToastView.m */,
+				AD3D428B1AFA119800BF341F /* BannerView.h */,
+				AD3D428C1AFA119800BF341F /* BannerView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -829,6 +840,10 @@
 		ADCCD0001A6E346A00455FE2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				AD2DCC6B1B0EFCDC00F12F07 /* ArchiveFile.h */,
+				AD2DCC6C1B0EFCDC00F12F07 /* ArchiveFile.m */,
+				AD2DCC6D1B0EFCDC00F12F07 /* UIActionSheet+Utils.h */,
+				AD2DCC6E1B0EFCDC00F12F07 /* UIActionSheet+Utils.m */,
 				ADCCD0011A6E347F00455FE2 /* UILabel+Utils.h */,
 				ADCCD0021A6E347F00455FE2 /* UILabel+Utils.m */,
 				ADCCD0041A6E349900455FE2 /* UIView+Utils.h */,
@@ -1076,6 +1091,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD474D171ACA86FA004D2733 /* ViewController.m in Sources */,
+				AD3D428D1AFA119800BF341F /* BannerView.m in Sources */,
 				ADC726D71AAFE8B700B567C1 /* SDWebImageDecoder.m in Sources */,
 				ADD393191A885204007DFF8D /* NSArray+MASAdditions.m in Sources */,
 				6740393119CC2446004398C4 /* AFHTTPRequestOperation.m in Sources */,
@@ -1104,6 +1120,7 @@
 				6740394519CC24FD004398C4 /* AppDelegate.m in Sources */,
 				ADD3933C1A88522A007DFF8D /* JSONHTTPClient.m in Sources */,
 				ADD393371A88522A007DFF8D /* JSONModelArray.m in Sources */,
+				AD2DCC6F1B0EFCDC00F12F07 /* ArchiveFile.m in Sources */,
 				ADC726D81AAFE8B700B567C1 /* SDWebImageDownloader.m in Sources */,
 				AD329AEF1AD50271000BA4B9 /* HUDViewController.m in Sources */,
 				ADD393521A885241007DFF8D /* MJRefreshBaseView.m in Sources */,
@@ -1163,6 +1180,7 @@
 				ADC727481AB02E8D00B567C1 /* AdModel.m in Sources */,
 				ADC727421AB02E4900B567C1 /* BaseView.m in Sources */,
 				ADCCD00F1A6E34B700455FE2 /* NSString+Utils.m in Sources */,
+				AD2DCC701B0EFCDC00F12F07 /* UIActionSheet+Utils.m in Sources */,
 				ADC726DC1AAFE8B700B567C1 /* UIButton+WebCache.m in Sources */,
 				ADC726E11AAFE8B700B567C1 /* UIImageView+WebCache.m in Sources */,
 			);
