@@ -5,24 +5,24 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>16CBEA75-7A93-4031-ACDF-B38C4EB2AFAC</string>
+	<string>27146757-F27E-433C-8B7D-67B3CCE42C4F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Framework</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>d6da2906-b76d-4016-bf36-d3172097a6a0++9213</key>
-		<string>svn://192.168.1.234/root/ios_framework</string>
+		<key>d6da2906-b76d-4016-bf36-d3172097a6a0++1188</key>
+		<string>svn://192.168.1.234/root/ios_framework/Framework</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Framework/Framework.xcodeproj</string>
+	<string>Framework.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>d6da2906-b76d-4016-bf36-d3172097a6a0++9213</key>
-		<string>../../..</string>
+		<key>d6da2906-b76d-4016-bf36-d3172097a6a0++1188</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectRepositoryRootDictionary</key>
 	<dict>
-		<key>d6da2906-b76d-4016-bf36-d3172097a6a0++9213</key>
+		<key>d6da2906-b76d-4016-bf36-d3172097a6a0++1188</key>
 		<string>svn://192.168.1.234</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -30,16 +30,16 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>d6da2906-b76d-4016-bf36-d3172097a6a0++9213</string>
+	<string>d6da2906-b76d-4016-bf36-d3172097a6a0++1188</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.subversion</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>d6da2906-b76d-4016-bf36-d3172097a6a0++9213</string>
+			<string>d6da2906-b76d-4016-bf36-d3172097a6a0++1188</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ios_framework</string>
+			<string>Framework</string>
 		</dict>
 	</array>
 </dict>

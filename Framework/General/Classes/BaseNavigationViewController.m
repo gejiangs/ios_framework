@@ -8,7 +8,7 @@
 
 #import "BaseNavigationViewController.h"
 
-@interface BaseNavigationViewController ()
+@interface BaseNavigationViewController ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 
 @end
 
@@ -26,7 +26,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self customNavigationBar];
+}
+-(void)customNavigationBar
+{
+//    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],
+//                                               NSFontAttributeName:[UIFont boldSystemFontOfSize:20.0f]
+//                                               };
+//    self.navigationBar.barTintColor = COLOR_SET_BLUE;
+//    
+//    self.navigationBar.tintColor = [UIColor whiteColor];
+    
+    self.interactivePopGestureRecognizer.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning

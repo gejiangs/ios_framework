@@ -14,6 +14,7 @@
 
 #pragma mark - Redefine
 
+#define WINDOW                              ((AppDelegate *)[UIApplication sharedApplication].delegate).window
 #define ApplicationDelegate                 ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 #define UserDefaults                        [NSUserDefaults standardUserDefaults]
 #define SharedApplication                   [UIApplication sharedApplication]
@@ -22,10 +23,6 @@
 #define ShowNetworkActivityIndicator()      [UIApplication sharedApplication].networkActivityIndicatorVisible = YES
 #define HideNetworkActivityIndicator()      [UIApplication sharedApplication].networkActivityIndicatorVisible = NO
 #define NetworkActivityIndicatorVisible(x)  [UIApplication sharedApplication].networkActivityIndicatorVisible = x
-#define SelfNavBar                          self.navigationController.navigationBar
-#define SelfTabBar                          self.tabBarController.tabBar
-#define SelfNavBarHeight                    self.navigationController.navigationBar.bounds.size.height
-#define SelfTabBarHeight                    self.tabBarController.tabBar.bounds.size.height
 #define ScreenRect                          [[UIScreen mainScreen] bounds]
 #define ScreenWidth                         [[UIScreen mainScreen] bounds].size.width
 #define ScreenHeight                        [[UIScreen mainScreen] bounds].size.height
@@ -49,6 +46,12 @@
 
 #define StringNotEmpty(str)                 (str && (str.length > 0))
 #define ArrayNotEmpty(arr)                  (arr && (arr.count > 0))
+
+
+/// block self
+#define WEAKSELF __weak __typeof(self)  weakSelf = self;
+#define STRONGSELF __strong __typeof(weakSelf)  strongSelf = weakSelf;
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 

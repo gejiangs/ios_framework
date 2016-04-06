@@ -49,4 +49,16 @@ static char key;
  objc_removeAssociatedObjects 移除关联
  */
 
++(void)showTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle otherTitles:(NSArray *)otherTitles block:(CompleteBlock)block
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelTitle otherButtonTitles:nil, nil];
+    if (otherTitles != nil) {
+        for (NSString *otitle in otherTitles) {
+            [alert addButtonWithTitle:otitle];
+        }
+    }
+    [alert showAlertViewWithCompleteBlock:block];
+}
+
+
 @end

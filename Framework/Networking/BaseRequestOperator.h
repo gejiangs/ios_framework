@@ -8,12 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import "RequestManager.h"
+#import "BaseModel.h"
 
-typedef void(^requestCompletionSuccessHandler)(BOOL succ, id responseObject);
+typedef void(^requestCompletionSuccessHandler)(BOOL succ, NSString *msg, id responseObject);
 typedef void(^requestCompletionFailureHandler)(NSError *error);
 typedef void(^requestCompletionHandler)();
 typedef void(^uploadProgress)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite);
 
+
+@interface FileModel : BaseModel
+
+@property (nonatomic, strong)   NSData *fileData;       //文件数据
+@property (nonatomic, copy)     NSString *name;         //参数名（一般为file）
+@property (nonatomic, copy)     NSString *fileName;     //上传文件名（xxxx.jpg或者xxx.png）
+@property (nonatomic, copy)     NSString *mimeType;     //文件类型（）
+
+@end
 
 @class AFHTTPRequestOperation;
 
@@ -60,8 +70,7 @@ typedef void(^uploadProgress)(NSUInteger bytesWritten, long long totalBytesWritt
  */
 -(void)uploadImageWithURL:(NSString *)url
                    params:(NSDictionary *)params
-                 fileData:(NSData *)fileData
-                  fileKey:(NSString *)fileKey
+                fileModel:(FileModel *)model
                   success:(requestCompletionSuccessHandler)success
                   failure:(requestCompletionFailureHandler)failure;
 
@@ -77,8 +86,39 @@ typedef void(^uploadProgress)(NSUInteger bytesWritten, long long totalBytesWritt
  */
 -(void)uploadImageWithURL:(NSString *)url
                    params:(NSDictionary *)params
-                 fileData:(NSData *)fileData
-                  fileKey:(NSString *)fileKey
+                fileModel:(FileModel *)model
+                 progress:(uploadProgress)progress
+                  success:(requestCompletionSuccessHandler)success
+                  failure:(requestCompletionFailureHandler)failure;
+
+/**
+ *  http 上传图片
+ *
+ *  @param url     url地址
+ *  @param params  参数
+ *  @param success 成功block
+ *  @param failure 失败block
+ *  @return HTTP 上传图片
+ */
+-(void)uploadImageWithURL:(NSString *)url
+                   params:(NSDictionary *)params
+               fileModels:(NSArray *)fileModels
+                  success:(requestCompletionSuccessHandler)success
+                  failure:(requestCompletionFailureHandler)failure;
+
+/**
+ *  http 上传图片
+ *
+ *  @param url     url地址
+ *  @param params  参数
+ *  @param progress 上传进度block
+ *  @param success 成功block
+ *  @param failure 失败block
+ *  @return HTTP 上传图片
+ */
+-(void)uploadImageWithURL:(NSString *)url
+                   params:(NSDictionary *)params
+               fileModels:(NSArray *)fileModels
                  progress:(uploadProgress)progress
                   success:(requestCompletionSuccessHandler)success
                   failure:(requestCompletionFailureHandler)failure;
@@ -121,5 +161,11 @@ typedef void(^uploadProgress)(NSUInteger bytesWritten, long long totalBytesWritt
 -(void)requestGroupWithManagers:(NSArray *)managers
                      completion:(requestCompletionHandler)completion;
 
+
+
+/**
+ *  取消请求
+ */
+- (void)cancelAllRequest;
 
 @end

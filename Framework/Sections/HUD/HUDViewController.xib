@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HUDViewController">
@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdZ-7b-h0h">
-                    <rect key="frame" x="219" y="20" width="163" height="30"/>
+                    <rect key="frame" x="216" y="20" width="169" height="30"/>
                     <state key="normal" title="显示toast(topOffset=40)">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -25,7 +25,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PkR-qP-u4z">
-                    <rect key="frame" x="206" y="550" width="189" height="30"/>
+                    <rect key="frame" x="203" y="550" width="195" height="30"/>
                     <state key="normal" title="显示toast(bottomOffset=40)">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -34,7 +34,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trL-y3-ZKa">
-                    <rect key="frame" x="245" y="285" width="110" height="30"/>
+                    <rect key="frame" x="195" y="285" width="110" height="30"/>
                     <state key="normal" title="居中、显示toast">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -43,7 +43,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fet-Oo-Qre">
-                    <rect key="frame" x="405" y="285" width="63" height="30"/>
+                    <rect key="frame" x="355" y="285" width="63" height="30"/>
                     <state key="normal" title="显示HUD">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -51,12 +51,21 @@
                         <action selector="showHUD:" destination="-1" eventType="touchUpInside" id="hQn-Zu-e2G"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghb-Gh-zT4">
+                    <rect key="frame" x="355" y="328" width="93" height="30"/>
+                    <state key="normal" title="显示HUD成功"/>
+                    <connections>
+                        <action selector="showHUDSuccess:" destination="-1" eventType="touchUpInside" id="z93-eg-8cn"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="trL-y3-ZKa" secondAttribute="centerX" id="52l-ty-acV"/>
+                <constraint firstItem="ghb-Gh-zT4" firstAttribute="top" secondItem="Fet-Oo-Qre" secondAttribute="bottom" constant="13" id="4HO-hf-Bfy"/>
+                <constraint firstAttribute="centerX" secondItem="trL-y3-ZKa" secondAttribute="centerX" constant="50" id="52l-ty-acV"/>
                 <constraint firstAttribute="centerX" secondItem="AdZ-7b-h0h" secondAttribute="centerX" id="CVU-ds-dOf"/>
                 <constraint firstAttribute="centerY" secondItem="Fet-Oo-Qre" secondAttribute="centerY" id="GIE-Ky-Gex"/>
+                <constraint firstItem="ghb-Gh-zT4" firstAttribute="leading" secondItem="Fet-Oo-Qre" secondAttribute="leading" id="R7h-Om-r7O"/>
                 <constraint firstItem="AdZ-7b-h0h" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="aI8-qs-vQT"/>
                 <constraint firstAttribute="centerY" secondItem="trL-y3-ZKa" secondAttribute="centerY" id="kPJ-zs-wYe"/>
                 <constraint firstAttribute="centerX" secondItem="PkR-qP-u4z" secondAttribute="centerX" id="olu-fB-8zl"/>

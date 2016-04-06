@@ -9,6 +9,20 @@
 #import "BaseRequestOperator.h"
 #import "AFHTTPRequestOperation.h"
 
+
+@implementation FileModel
+
+-(id)init
+{
+    if (self = [super init]) {
+        self.mimeType = @"image/png";
+        self.name = @"file";
+    }
+    return self;
+}
+
+@end
+
 @interface BaseRequestOperator ()
 
 @property (nonatomic, copy) requestCompletionSuccessHandler successHandler;
@@ -53,14 +67,15 @@
 {
     [self requestWithMethod:@"POST" URL:url params:params success:success failure:failure];
 }
+
 /**
- *  http 上传图片
+ *  http 网络请求
  *
  *  @param url     url地址
  *  @param params  参数
  *  @param success 成功block
  *  @param failure 失败block
- *  @return HTTP 上传图片
+ *  @return HTTP 网络请求
  */
 -(void)requestWithMethod:(NSString *)method
                      URL:(NSString *)url
@@ -69,12 +84,12 @@
                  failure:(requestCompletionFailureHandler)failure
 {
     
-    [self cancelAllRequest];
-    
     self.afRequest = [self getRequestWithMethod:method url:url params:params success:success failure:failure];
     
     [self.afRequest start];
 }
+
+
 /**
  *  http 上传图片
  *
@@ -86,12 +101,11 @@
  */
 -(void)uploadImageWithURL:(NSString *)url
                    params:(NSDictionary *)params
-                 fileData:(NSData *)fileData
-                  fileKey:(NSString *)fileKey
+                fileModel:(FileModel *)model
                   success:(requestCompletionSuccessHandler)success
                   failure:(requestCompletionFailureHandler)failure
 {
-    [self uploadImageWithURL:url params:params fileData:fileData fileKey:fileKey progress:nil success:success failure:failure];
+    [self uploadImageWithURL:url params:params fileModel:model progress:nil success:success failure:failure];
 }
 /**
  *  http 上传图片
@@ -105,8 +119,46 @@
  */
 -(void)uploadImageWithURL:(NSString *)url
                    params:(NSDictionary *)params
-                 fileData:(NSData *)fileData
-                  fileKey:(NSString *)fileKey
+                fileModel:(FileModel *)model
+                 progress:(uploadProgress)progress
+                  success:(requestCompletionSuccessHandler)success
+                  failure:(requestCompletionFailureHandler)failure
+{
+    [self uploadImageWithURL:url params:params fileModels:@[model] progress:progress success:success failure:failure];
+}
+
+/**
+ *  http 上传图片
+ *
+ *  @param url     url地址
+ *  @param params  参数
+ *  @param progress 上传进度block
+ *  @param success 成功block
+ *  @param failure 失败block
+ *  @return HTTP 上传图片
+ */
+-(void)uploadImageWithURL:(NSString *)url
+                   params:(NSDictionary *)params
+               fileModels:(NSArray *)models
+                  success:(requestCompletionSuccessHandler)success
+                  failure:(requestCompletionFailureHandler)failure
+{
+    [self uploadImageWithURL:url params:params fileModels:models progress:nil success:success failure:failure];
+}
+
+/**
+ *  http 上传图片
+ *
+ *  @param url     url地址
+ *  @param params  参数
+ *  @param progress 上传进度block
+ *  @param success 成功block
+ *  @param failure 失败block
+ *  @return HTTP 上传图片
+ */
+-(void)uploadImageWithURL:(NSString *)url
+                   params:(NSDictionary *)params
+               fileModels:(NSArray *)models
                  progress:(uploadProgress)progress
                   success:(requestCompletionSuccessHandler)success
                   failure:(requestCompletionFailureHandler)failure
@@ -114,33 +166,43 @@
     self.successHandler = success;
     self.failureHandler = failure;
     
-    [self cancelAllRequest];
-    
     void(^bodyWithBlock)(id<AFMultipartFormData> formData)= ^(id<AFMultipartFormData> formData){
-        [formData appendPartWithFileData:fileData
-                                    name:fileKey
-                                fileName:@""
-                                mimeType:@"image/png"];
+        for (FileModel *model in models) {
+            [formData appendPartWithFileData:model.fileData
+                                        name:model.name
+                                    fileName:model.fileName
+                                    mimeType:model.mimeType];
+        }
     };
-
+    
     AFHTTPRequestSerializer <AFURLRequestSerialization> * requestSerializer = [AFHTTPRequestSerializer serializer];
     NSMutableURLRequest *request = [requestSerializer multipartFormRequestWithMethod:@"POST"
-                                            URLString:[[NSURL URLWithString:url] absoluteString]
-                                           parameters:params
-                            constructingBodyWithBlock:bodyWithBlock
-                                                error:nil];
+                                                                           URLString:[[NSURL URLWithString:url] absoluteString]
+                                                                          parameters:params
+                                                           constructingBodyWithBlock:bodyWithBlock
+                                                                               error:nil];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     NSMutableSet *set = [[NSMutableSet alloc] initWithSet:operation.responseSerializer.acceptableContentTypes];
-    [set addObject:@"application/x-javascript"];
+    [set addObject:@"application/json"];
+    [set addObject:@"text/json"];
+    [set addObject:@"text/javascript"];
+    [set addObject:@"text/html"];
+    [set addObject:@"text/css"];
+    [set addObject:@"text/plain"];
+    
     operation.responseSerializer.acceptableContentTypes = set;
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-         self.successHandler(YES, responseObject);
+         //此处做返回判断YES、NO
+         BOOL success = [[responseObject objectForKey:@"code"] intValue] == 0;
+         NSString *message = [responseObject objectForKey:@"msg"];
+         
+         self.successHandler(success, message, responseObject);
      }
-      failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          self.failureHandler(error);
      }];
@@ -153,6 +215,7 @@
     
     [self.afRequest start];
 }
+
 
 #pragma mark - 返回队列请求对象(主要用于多任务请求)
 /**
@@ -170,9 +233,9 @@
                                   failure:(requestCompletionFailureHandler)failure
 {
     AFHTTPRequestOperation *operation = [self getRequestWithGETByURL:url
-                                                               params:params
-                                                              success:success
-                                                              failure:failure];
+                                                              params:params
+                                                             success:success
+                                                             failure:failure];
     RequestManager *request = [[RequestManager alloc] init];
     request.operation = operation;
     
@@ -193,9 +256,9 @@
                                    failure:(requestCompletionFailureHandler)failure
 {
     AFHTTPRequestOperation *operation = [self getRequestWithPOSTByURL:url
-                                                              params:params
-                                                             success:success
-                                                             failure:failure];
+                                                               params:params
+                                                              success:success
+                                                              failure:failure];
     RequestManager *request = [[RequestManager alloc] init];
     request.operation = operation;
     
@@ -235,10 +298,27 @@
                                         success:(requestCompletionSuccessHandler)success
                                         failure:(requestCompletionFailureHandler)failure
 {
+#pragma mark -
+#pragma mark -  ztx add start
+    
+    /// 打印请求数据
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSString *key in [params allKeys]) {
+        NSString *str = [NSString stringWithFormat:@"%@=%@",key,params[key]];
+        [array addObject:str];
+    }
+    NSString *postString = [array componentsJoinedByString:@"&"];
+    NSString *urlString = url;
+    if (postString.length >0) {
+        urlString = [NSString stringWithFormat:@"%@&%@",url,postString];
+    }
+    NSLog(@"这是请求的url:%@",urlString);
+    
+#pragma mark -
+#pragma mark -  ztx add  end
     
     self.successHandler = success;
     self.failureHandler = failure;
-    
     
     AFHTTPRequestSerializer <AFURLRequestSerialization> * requestSerializer = [AFHTTPRequestSerializer serializer];
     NSMutableURLRequest *request = [requestSerializer requestWithMethod:method
@@ -253,16 +333,20 @@
     [set addObject:@"text/javascript"];
     [set addObject:@"text/html"];
     [set addObject:@"text/css"];
+    [set addObject:@"text/plain"];
     
     operation.responseSerializer.acceptableContentTypes = set;
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-         //此处做返回判断YES、NO
-         //if([[responseObject objectForKey:@"code"] isEqualToString:@"200"])
-         self.successHandler(YES, responseObject);
+         NSLog(@"这是%@返回的数据:%@",urlString,responseObject);
+         
+         BOOL success = [[responseObject objectForKey:@"code"] intValue] == 0;
+         NSString *message = [responseObject objectForKey:@"msg"];
+         
+         self.successHandler(success, message, responseObject);
      }
-     failure:^(AFHTTPRequestOperation *operation, NSError *error)
+                                     failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          self.failureHandler(error);
      }];
@@ -288,11 +372,29 @@
     
     self.completionHandler = completion;
     NSArray *operationsArr = [AFURLConnectionOperation batchOfRequestOperations:operations
-                                                               progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
-                                                               } completionBlock:^(NSArray *operations) {
-                                                                   self.completionHandler();
-                                                               }];
+                                                                  progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
+                                                                      
+                                                                  } completionBlock:^(NSArray *operations) {
+                                                                      self.completionHandler();
+                                                                  }];
     [[NSOperationQueue mainQueue] addOperations:operationsArr waitUntilFinished:NO];
+}
+
+
+
+
+- (NSString *)toJSONData:(id)theData
+{
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:theData
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    
+    if (error) {
+        return @"";
+    }
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    return jsonString;
 }
 
 /**
@@ -313,7 +415,7 @@
  */
 -(void)dealloc
 {
-    [self cancelAllRequest];
+    //    [self cancelAllRequest];
 }
 
 @end

@@ -30,17 +30,31 @@
     [self.view showActivityView:@"loading..."];
     [self.adHelper getADInfoWithSuccess:^(BOOL success, AdModel *adModel) {
         [self.adImageView sd_setImageWithURL:[NSURL URLWithString:adModel.ad_img_url] placeholderImage:nil];
-        
+        NSLog(@"aaaaa");
         [self.view hiddenActivityView];
     } failure:^(NSError *error) {
         [self.view showActivityView:@"网络异常" hideAfterDelay:3.f];
     }];
+    
+    
+    [self.adHelper getADInfoWithSuccesss:^(BOOL success, AdModel *adModel) {
+        [self.adImageView sd_setImageWithURL:[NSURL URLWithString:adModel.ad_img_url] placeholderImage:nil];
+        NSLog(@"bbbbb");
+        [self.view hiddenActivityView];
+    } failure:^(NSError *error) {
+        [self.view showActivityView:@"网络异常" hideAfterDelay:3.f];
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
 
 /*
 #pragma mark - Navigation

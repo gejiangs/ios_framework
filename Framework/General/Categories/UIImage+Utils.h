@@ -19,4 +19,9 @@
 // 生成一张指定颜色的图片
 + (UIImage *)imageWithColor:(UIColor*)color;
 
+-(UIImage *)rotateImage;
+
+// 获取某一点的RGB 和alpha
+- (UIColor *)colorAtpoint:(CGPoint )point;
+
 @end

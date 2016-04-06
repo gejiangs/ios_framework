@@ -9,6 +9,19 @@
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 
+#import "UMSocialYixinHandler.h"
+#import "UMSocialFacebookHandler.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialSinaSSOHandler.h"
+#import "UMSocialRenrenHandler.h"
+
+#import "UMSocialInstagramHandler.h"
+#import "UMSocialWhatsappHandler.h"
+#import "UMSocialLineHandler.h"
+#import "UMSocialTumblrHandler.h"
+
+
 @interface AppDelegate ()
 
 @property (nonatomic, unsafe_unretained) UIBackgroundTaskIdentifier bgTask;
@@ -21,6 +34,42 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    NSLog(@"document:%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]);
+    
+    //设置友盟社会化组件appkey
+    [UMSocialData setAppKey:UmengAppkey];
+    
+    //设置微信AppId，设置分享url，默认使用友盟的网址
+    [UMSocialWechatHandler setWXAppId:@"wxd930ea5d5a258f4f" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.umeng.com/social"];
+    
+    //设置分享到QQ空间的应用Id，和分享url 链接
+    [UMSocialQQHandler setQQWithAppId:@"100424468" appKey:@"c7394704798a158208a74ab60104f0ba" url:@"http://www.umeng.com/social"];
+    
+    //设置易信Appkey和分享url地址
+    [UMSocialYixinHandler setYixinAppKey:@"yx35664bdff4db42c2b7be1e29390c1a06" url:@"http://www.umeng.com/social"];
+    
+    //打开人人网SSO开关
+    [UMSocialRenrenHandler openSSO];
+    
+    //设置facebook应用ID，和分享纯文字用到的url地址
+    [UMSocialFacebookHandler setFacebookAppID:@"91136964205" shareFacebookWithURL:@"http://www.umeng.com/social"];
+    
+    //下面打开Instagram的开关
+    [UMSocialInstagramHandler openInstagramWithScale:NO paddingColor:[UIColor blackColor]];
+    
+    //打开whatsapp
+    [UMSocialWhatsappHandler openWhatsapp:UMSocialWhatsappMessageTypeImage];
+    
+    //打开Tumblr
+    [UMSocialTumblrHandler openTumblr];
+    
+    //打开line
+    [UMSocialLineHandler openLineShare:UMSocialLineMessageTypeImage];
+    
+    
+    NSLog(@"didFinishLaunchingWithOptions");
     
     return YES;
 }
@@ -75,6 +124,16 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    if (!self.isFull) {
+        return UIInterfaceOrientationMaskPortrait;
+    }
+    
+    return UIInterfaceOrientationMaskLandscapeRight | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskPortrait;
 }
 
 -(void)runTimer

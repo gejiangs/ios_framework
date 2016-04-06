@@ -10,7 +10,6 @@
 #import "MBProgressHUD.h"
 #import "ToastView.h"
 
-#define ACTIVITYTAG 9999
 
 @implementation UIView (Utils)
 
@@ -117,6 +116,23 @@
     
     return textView;
 }
+
+//当前view添加UIScrollView,指定delegate
+-(UIScrollView *)addScrollViewWithDelegate:(id)delegate
+{
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+    scrollView.pagingEnabled = YES;
+    scrollView.delegate = delegate;
+    scrollView.bounces = YES;
+    scrollView.alwaysBounceHorizontal = YES;
+    scrollView.alwaysBounceVertical = YES;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    [self addSubview:scrollView];
+    
+    return scrollView;
+}
+
 #pragma mark -- 多view水平分布
 - (void) distributeSpacingHorizontallyWith:(NSArray*)views
 {
@@ -220,43 +236,56 @@
 #pragma mark - 显示加载
 
 //显示加载提示
-- (void)showActivityView:(NSString *)labelText
+- (MBProgressHUD *)showActivityView:(NSString *)labelText
 {
-    UIView *view = [self viewWithTag:ACTIVITYTAG];
-    if (view) {
-        [view removeFromSuperview];
-    }
+    [self hiddenActivityView];
+    
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self];
-    hud.tag = ACTIVITYTAG;
     hud.labelText = labelText;
     [self addSubview:hud];
     [hud show:YES];
-}
-
-//隐藏加载提示
-- (void)hiddenActivityView
-{
-    
-    MBProgressHUD *view =(MBProgressHUD *) [self viewWithTag:ACTIVITYTAG];
-    [view hide:YES];
-    
+    return hud;
 }
 
 //显示加载提示,指定时间(秒数)自动消失
 - (void)showActivityView:(NSString *)labelText hideAfterDelay:(NSTimeInterval)delay
 {
-    UIView *view = [self viewWithTag:ACTIVITYTAG];
-    if (view) {
-        [view removeFromSuperview];
-    }
+    [self hiddenActivityView];
     
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self];
-    hud.tag = ACTIVITYTAG;
     hud.labelText = labelText;
     hud.mode = MBProgressHUDModeText;
     [self addSubview:hud];
     [hud show:YES];
     [hud hide:YES afterDelay:delay];
+    
+}
+
+//显示成功提示
+- (void)showSuccessActivityView:(NSString *)text
+{
+    UIImage *image = [[UIImage imageNamed:@"Checkmark"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self showSuccessActivityView:text image:image];
+}
+
+//显示成功提示、指定图片
+- (void)showSuccessActivityView:(NSString *)text image:(UIImage *)image
+{
+    MBProgressHUD *hud = [MBProgressHUD HUDForView:self];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    hud.customView = imageView;
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.labelText = text;
+    [hud hide:YES afterDelay:2.f];
+}
+
+//隐藏加载提示
+- (void)hiddenActivityView
+{
+    MBProgressHUD *hud = [MBProgressHUD HUDForView:self];
+    if (hud != nil) {
+        [hud hide:YES];
+    }
     
 }
 

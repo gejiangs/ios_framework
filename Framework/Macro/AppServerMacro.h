@@ -10,4 +10,6 @@
 #define Eventor_AppServerMacro_h
 
 
+#define UmengAppkey @"53290df956240b6b4a0084b3"
+
 #endif

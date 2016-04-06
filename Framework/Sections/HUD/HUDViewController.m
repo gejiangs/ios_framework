@@ -37,6 +37,16 @@
 {
     [self.view showActivityView:sender.currentTitle hideAfterDelay:2];
 }
+- (IBAction)showHUDSuccess:(UIButton *)sender
+{
+    [self.view showActivityView:@"Loading..."];
+    [self dispatchAsyncGlobalQueue:^{
+        sleep(3);
+        [self dispatchAsyncMainQueue:^{
+            [self.view showSuccessActivityView:@"Success"];
+        }];
+    }];
+}
 
 - (IBAction)toastBottom:(UIButton *)sender
 {

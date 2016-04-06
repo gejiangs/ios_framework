@@ -41,4 +41,17 @@
     
     return [UIColor colorWithRed:(float)(red/255.0f) green:(float)(green / 255.0f) blue:(float)(blue / 255.0f) alpha:1.0f];
 }
+
+//颜色转换 UIColor转成十六进制hexData值
++ (NSData *)hexDataWithRGBColor:(UIColor *)color {
+    Byte byteColor[3];
+    const CGFloat *cs = CGColorGetComponents(color.CGColor);
+    for (int i=0; i<3; i++) {
+        byteColor[i] = cs[i] * 255;
+    }
+    NSData *data = [NSData dataWithBytes:byteColor length:3];
+    return data;
+}
+
+
 @end

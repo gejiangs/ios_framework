@@ -14,4 +14,6 @@ typedef void(^CompleteBlock) (NSInteger buttonIndex);
 // 用Block的方式回调，这时候会默认用self作为Delegate
 - (void)showAlertViewWithCompleteBlock:(CompleteBlock) block;
 
++(void)showTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle otherTitles:(NSArray *)otherTitles block:(CompleteBlock)block;
+
 @end

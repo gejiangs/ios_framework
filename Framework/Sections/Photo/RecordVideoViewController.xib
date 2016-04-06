@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordVideoViewController">
+            <connections>
+                <outlet property="bottomView" destination="Jfz-wU-F0o" id="Iet-EB-3SY"/>
+                <outlet property="focusCursor" destination="XiZ-4k-eGK" id="voJ-dh-qIu"/>
+                <outlet property="recordLineView" destination="2Wx-vc-Blh" id="brv-tu-Pas"/>
+                <outlet property="recordTipLabel" destination="mtC-pN-dDy" id="wZf-Yv-J9G"/>
+                <outlet property="takeButton" destination="mwf-0B-i9g" id="kV1-t1-WtW"/>
+                <outlet property="timeLineConstrain" destination="T4P-fI-UfV" id="okQ-CC-mRu"/>
+                <outlet property="videoPreviewView" destination="4ak-5Z-osH" id="94y-Ao-VCt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jfz-wU-F0o">
+                    <rect key="frame" x="0.0" y="450" width="600" height="150"/>
+                    <subviews>
+                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwf-0B-i9g">
+                            <rect key="frame" x="230" y="5" width="140" height="140"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="140" id="6Gc-eT-PAu"/>
+                                <constraint firstAttribute="width" constant="140" id="dyO-WJ-7as"/>
+                            </constraints>
+                            <state key="normal" title="长按开始录制">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wx-vc-Blh">
+                            <rect key="frame" x="250" y="0.0" width="100" height="5"/>
+                            <color key="backgroundColor" red="0.46666666666666667" green="0.75294117647058822" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="5" id="RfV-HY-q3w"/>
+                                <constraint firstAttribute="width" constant="100" id="T4P-fI-UfV"/>
+                            </constraints>
+                        </view>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="向上移动结束拍摄" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtC-pN-dDy">
+                            <rect key="frame" x="236" y="15" width="128" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.46666666666666667" green="0.74901960784313726" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="mtC-pN-dDy" firstAttribute="top" secondItem="2Wx-vc-Blh" secondAttribute="bottom" constant="10" id="3OP-kL-Jbb"/>
+                        <constraint firstAttribute="centerX" secondItem="mtC-pN-dDy" secondAttribute="centerX" id="9cK-mD-VSb"/>
+                        <constraint firstAttribute="centerY" secondItem="mwf-0B-i9g" secondAttribute="centerY" id="SIL-cU-16S"/>
+                        <constraint firstAttribute="centerX" secondItem="mwf-0B-i9g" secondAttribute="centerX" id="Yoa-t0-9ge"/>
+                        <constraint firstItem="2Wx-vc-Blh" firstAttribute="top" secondItem="Jfz-wU-F0o" secondAttribute="top" id="c1c-80-vcr"/>
+                        <constraint firstAttribute="centerX" secondItem="2Wx-vc-Blh" secondAttribute="centerX" id="mDe-rw-4rv"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ak-5Z-osH">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="450"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera_focus_red" translatesAutoresizingMaskIntoConstraints="NO" id="XiZ-4k-eGK">
+                            <rect key="frame" x="100" y="100" width="76" height="76"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4ak-5Z-osH" secondAttribute="height" multiplier="4:3" id="gV5-lJ-yrz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Jfz-wU-F0o" secondAttribute="bottom" id="HKo-lb-AB8"/>
+                <constraint firstItem="4ak-5Z-osH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IE9-me-7mZ"/>
+                <constraint firstAttribute="trailing" secondItem="4ak-5Z-osH" secondAttribute="trailing" id="Kru-k4-yb8"/>
+                <constraint firstAttribute="trailing" secondItem="Jfz-wU-F0o" secondAttribute="trailing" id="LQW-QM-yiY"/>
+                <constraint firstItem="Jfz-wU-F0o" firstAttribute="top" secondItem="4ak-5Z-osH" secondAttribute="bottom" id="XBv-qZ-9uh"/>
+                <constraint firstItem="Jfz-wU-F0o" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bhe-el-THK"/>
+                <constraint firstItem="4ak-5Z-osH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="p58-no-fRc"/>
+            </constraints>
+            <point key="canvasLocation" x="482" y="447"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="camera_focus_red" width="75" height="75"/>
+    </resources>
+</document>

@@ -11,13 +11,12 @@
 @implementation QQModel
 
 //此方法用于配置数据key与model属性不相同问题
-//{@"返回数据key":@"model属性"}
-+(JSONKeyMapper *)keyMapper
+//{@"model属性":@"返回数据key"}
++ (NSDictionary *)replacedKeyFromPropertyName
 {
-    return [[JSONKeyMapper alloc] initWithDictionary:@{
-                                                       @"icon":@"faceName"
-                                                       }];
+    return @{@"faceName":@"icon"};
 }
+
 
 -(NSString *)faceUrl
 {

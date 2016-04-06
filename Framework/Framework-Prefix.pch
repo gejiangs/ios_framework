@@ -19,4 +19,8 @@
     #define MAS_SHORTHAND_GLOBALS
     
     #import "Masonry.h"
+
+    ///< json->model
+    #import "MJExtension.h"
+
 #endif

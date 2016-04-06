@@ -7,12 +7,18 @@
 //
 
 #import "NSString+Utils.h"
+#import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (Utils)
 
 //字符串去空格
 -(NSString *)stringTrimWhitespace{
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
+
+- (BOOL)checkEmpty{
+    return [[self stringTrimWhitespace] isEqualToString:@""];
 }
 
 #pragma mark --长度宽度相关方法
@@ -156,4 +162,64 @@
     return hexStr;
 }
 
+
++ (NSString *)fullPinyinWithSystemMethodFromChiniseString:(NSString *)string
+{
+    if(!string || ![string length]) return nil;
+    
+    ///
+    string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    CFStringRef aCFString = (__bridge_retained CFStringRef) string ;
+    CFMutableStringRef stringRef = CFStringCreateMutableCopy(NULL, 0, aCFString);
+    CFRelease(aCFString);
+    /// 转成带拼音的 有音调哦
+    CFStringTransform(stringRef, NULL, kCFStringTransformToLatin, false);
+
+    /// 去掉音调
+    CFStringTransform(stringRef, NULL, kCFStringTransformStripCombiningMarks, false);
+    return [[NSString stringWithFormat:@"%@",stringRef] uppercaseString]; /// 这是大写输出  业务需要
+}
+
+
+
+- (NSString *)md5String{
+    
+    if(self == nil || [self length] == 0)
+        return nil;
+    
+    const char *value = [self UTF8String];
+    
+    unsigned char outputBuffer[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(value, (int)strlen(value), outputBuffer);
+    
+    NSMutableString *outputString = [[NSMutableString alloc] initWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for(NSInteger count = 0; count < CC_MD5_DIGEST_LENGTH; count++){
+        [outputString appendFormat:@"%02x",outputBuffer[count]];
+    }
+    
+    return outputString;
+}
+
+
+//判断是否手机号码
+- (BOOL)isTelephone
+{
+    NSString *MOBILE = @"^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$";
+    NSString *CM = @"^1(34[0-8]|(3[5-9]|5[017-9]|8[278])\\d)\\d{7}$";
+    NSString *CU = @"^1(3[0-2]|5[256]|8[56])\\d{8}$";
+    NSString *CT = @"^1((33|53|8[09])[0-9]|349)\\d{7}$";
+    NSString *PHS = @"^0(10|2[0-5789]|\\d{3})\\d{7,8}$";
+    NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
+    NSPredicate *regextestcm = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM];
+    NSPredicate *regextestcu = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU];
+    NSPredicate *regextestct = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT];
+    NSPredicate *regextestphs = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", PHS];
+    
+    return  [regextestmobile evaluateWithObject:self]   ||
+    [regextestcm evaluateWithObject:self]       ||
+    [regextestcu evaluateWithObject:self]       ||
+    [regextestct evaluateWithObject:self]       ||
+    [regextestphs evaluateWithObject:self];
+}
 @end

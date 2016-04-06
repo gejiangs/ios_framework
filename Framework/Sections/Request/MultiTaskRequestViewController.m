@@ -51,6 +51,9 @@
     NSMutableArray *managers = [NSMutableArray array];
     for (int i=0; i<50; i++) {
         NSString *num = [NSString stringWithFormat:@"%d", 21470301+(i*2)];
+        
+        NSLog(@"haha i:%d==num:%@", i, num);
+
         //返回请求对象
         RequestManager *manager =   [self.qqHelper getQQInfoWithQQ:num
                                                            success:^(BOOL success, QQModel *model) {
@@ -100,6 +103,16 @@
     
     return cell;
 }
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+
+    [super viewWillDisappear:animated];
+}
+
+
+
 
 /*
 #pragma mark - Navigation
