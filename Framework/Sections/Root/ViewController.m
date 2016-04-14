@@ -10,8 +10,7 @@
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray *contentList;
+@property (nonatomic, strong)   UIButton *handlerView;
 
 @end
 
@@ -22,12 +21,10 @@
     
     self.title = @"框架demo";
     
-    [self.view addSubview:self.tableView];
-    [self.tableView makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
+    [self addRightBarButton:@"手动截屏" target:self action:@selector(rightCliked:)];
     
-    self.contentList = @[@{@"title":@"网络请求", @"class":@"RequestViewController"},
+    
+    NSArray *array = @[@{@"title":@"网络请求", @"class":@"RequestViewController"},
                          @{@"title":@"多图合并视频",@"class":@"ImageConvertVedioViewController"},
                          @{@"title":@"多任务请求",@"class":@"MultiTaskRequestViewController"},
                          @{@"title":@"AutoLayout 动画", @"class":@"AnimateViewController"},
@@ -44,27 +41,66 @@
                          @{@"title":@"MJExtension示例",@"class":@"MJExtensionViewController"},
                          @{@"title":@"蓝牙连接",@"class":@"BluetoothViewController"},
                          @{@"title":@"系统设置页面跳转",@"class":@"SystemSettingViewController"}];
+    
+    self.contentList = [NSMutableArray arrayWithArray:array];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(userDidTakeScreenshot)
+                                                 name:UIApplicationUserDidTakeScreenshotNotification object:nil];
 }
 
--(UITableView *)tableView
+-(void)cancelAction:(UIButton *)sender
 {
-    if (_tableView) {
-        return _tableView;
+    if (self.handlerView != nil) {
+        [self.handlerView removeFromSuperview];
+        self.handlerView = nil;
     }
+}
+
+//截屏响应
+- (void)userDidTakeScreenshot
+{
+    NSLog(@"检测到截屏");
     
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    self.handlerView = [UIButton buttonWithType:UIButtonTypeCustom];
+    _handlerView.frame = self.navigationController.view.bounds;
+    _handlerView.backgroundColor = [UIColor colorWithHue:0 saturation:0 brightness:0 alpha:0.3];
+    [_handlerView addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController.view addSubview:_handlerView];
     
-    return _tableView;
+    //添加显示
+    UIImageView *imgvPhoto = [[UIImageView alloc]initWithImage:[UIImage imageWithScreenShot]];
+    
+    //添加边框
+    CALayer * layer = [imgvPhoto layer];
+    layer.borderColor = [
+                         [UIColor whiteColor] CGColor];
+    layer.borderWidth = 5.0f;
+    //添加四个边阴影
+    imgvPhoto.layer.shadowColor = [UIColor blackColor].CGColor;
+    imgvPhoto.layer.shadowOffset = CGSizeMake(0, 0);
+    imgvPhoto.layer.shadowOpacity = 0.5;
+    imgvPhoto.layer.shadowRadius = 10.0;
+    //添加两个边阴影
+    imgvPhoto.layer.shadowColor = [UIColor blackColor].CGColor;
+    imgvPhoto.layer.shadowOffset = CGSizeMake(4, 4);
+    imgvPhoto.layer.shadowOpacity = 0.5;
+    imgvPhoto.layer.shadowRadius = 2.0;
+    
+    [_handlerView addSubview:imgvPhoto];
+    [imgvPhoto makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(_handlerView);
+        make.width.equalTo(_handlerView.width).multipliedBy(0.5);
+        make.height.equalTo(_handlerView.height).multipliedBy(0.5);
+    }];
+}
+
+-(void)rightCliked:(UIButton *)sender
+{
+    [self userDidTakeScreenshot];
 }
 
 #pragma mark UITableView dataSource
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.contentList count];

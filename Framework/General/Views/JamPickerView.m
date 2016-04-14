@@ -21,6 +21,16 @@
 
 @implementation JamPickerView
 
++(instancetype)showInView:(UIView *)view
+{
+    JamPickerView *selfView = [[JamPickerView alloc] initWithFrame:view.bounds];
+    
+    [view addSubview:selfView];
+    [selfView show:YES];
+    
+    return selfView;
+}
+
 -(id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
@@ -89,26 +99,6 @@
     [self show:NO];
 }
 
--(UIColor *)colorR:(int)r G:(int)g B:(int)b
-{
-    return [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1.f];
-}
-
--(UIImage*)imageWithColor:(UIColor*)color
-{
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
-
 -(void)show:(BOOL)show
 {
     isShow = show;
@@ -127,12 +117,6 @@
             [self removeFromSuperview];
         }
     }];
-}
-
--(void)showInView:(UIView *)view
-{
-    [view addSubview:self];
-    [self show:YES];
 }
 
 -(void)reloadAllComponents
@@ -205,7 +189,7 @@
             titleLabel.minimumScaleFactor = 8.;
             titleLabel.adjustsFontSizeToFitWidth = YES;
             titleLabel.textAlignment=NSTextAlignmentCenter;
-            titleLabel.textColor=RGB(69, 69, 69);
+            titleLabel.textColor=[self colorR:69 G:69 B:69];
             titleLabel.font=[UIFont systemFontOfSize:15];
         }
         titleLabel.text = [self pickerView:(UIPickerView*)self titleForRow:row forComponent:component];
@@ -214,5 +198,27 @@
         return titleLabel;
     }
 }
+
+#pragma mark - Method
+-(UIColor *)colorR:(int)r G:(int)g B:(int)b
+{
+    return [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1.f];
+}
+
+-(UIImage*)imageWithColor:(UIColor*)color
+{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
 
 @end

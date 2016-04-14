@@ -28,7 +28,7 @@
 
 @property(nonatomic,weak) id<JamPickerViewDelegate> delegate;
 
-- (void)showInView:(UIView *)view;
++ (instancetype)showInView:(UIView *)view;
 
 - (void)reloadAllComponents;
 - (void)reloadComponent:(NSInteger)component;

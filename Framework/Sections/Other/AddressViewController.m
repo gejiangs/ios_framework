@@ -57,9 +57,8 @@
 
 -(void)showComboxPickView:(id)sender
 {
-    self.pickerView = [[JamPickerView alloc] initWithFrame:self.view.bounds];
+    self.pickerView = [JamPickerView showInView:self.view];
     _pickerView.delegate = self;
-    [_pickerView showInView:self.view];
     
     NSInteger proSelectedRow = -1;
     NSInteger citySelectedRow = -1;

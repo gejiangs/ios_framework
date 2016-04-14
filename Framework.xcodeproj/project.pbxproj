@@ -168,7 +168,6 @@
 		ADCCD0101A6E34B700455FE2 /* UIAlertView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCD00A1A6E34B700455FE2 /* UIAlertView+Utils.m */; };
 		ADCCD0111A6E34B700455FE2 /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCD00C1A6E34B700455FE2 /* UIColor+Utils.m */; };
 		ADCCD0121A6E34B700455FE2 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCD00E1A6E34B700455FE2 /* UIImage+Utils.m */; };
-		ADCCD0151A6E3DEC00455FE2 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCD0141A6E3DEC00455FE2 /* RequestManager.m */; };
 		ADD175761C561FB70091F769 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD175751C561FB70091F769 /* VideoViewController.xib */; };
 		ADD175811C5625CF0091F769 /* QBPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1757E1C5625CF0091F769 /* QBPreviewView.m */; };
 		ADD175821C5625CF0091F769 /* QBPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD175801C5625CF0091F769 /* QBPreviewViewController.m */; };
@@ -565,8 +564,6 @@
 		ADCCD00C1A6E34B700455FE2 /* UIColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utils.m"; sourceTree = "<group>"; };
 		ADCCD00D1A6E34B700455FE2 /* UIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
 		ADCCD00E1A6E34B700455FE2 /* UIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
-		ADCCD0131A6E3DEC00455FE2 /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
-		ADCCD0141A6E3DEC00455FE2 /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
 		ADD175751C561FB70091F769 /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		ADD1757D1C5625CF0091F769 /* QBPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPreviewView.h; sourceTree = "<group>"; };
 		ADD1757E1C5625CF0091F769 /* QBPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPreviewView.m; sourceTree = "<group>"; };
@@ -732,8 +729,6 @@
 			isa = PBXGroup;
 			children = (
 				BF39FD9B1B8F06770088790F /* Helpers */,
-				ADCCD0131A6E3DEC00455FE2 /* RequestManager.h */,
-				ADCCD0141A6E3DEC00455FE2 /* RequestManager.m */,
 				6732362719D108D500E9544A /* BaseRequestOperator.h */,
 				6732362619D108D500E9544A /* BaseRequestOperator.m */,
 			);
@@ -1877,7 +1872,6 @@
 				AD3D0F081B1D41360048E80D /* QBImagePickerGroupCell.m in Sources */,
 				ADD9C7191C16B58700B03718 /* ImageConvertVedioViewController.m in Sources */,
 				ADC726FC1AAFF54F00B567C1 /* MBProgressHUD.m in Sources */,
-				ADCCD0151A6E3DEC00455FE2 /* RequestManager.m in Sources */,
 				BF8467CA1B7454BD0023824D /* MJExtensionViewController.m in Sources */,
 				AD61A45E1AAECDCD000CE8F3 /* GCDAsyncSocket.m in Sources */,
 				AD321D371B4E22AC0004FA0C /* PictureViewController.m in Sources */,

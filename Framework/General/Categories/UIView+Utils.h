@@ -103,8 +103,8 @@
 //显示toast文字，指定向下偏移与定时消失
 - (void)showToastText:(NSString *)text bottomOffset:(CGFloat) bottomOffset duration:(CGFloat) duration;
 
-
-
+//设置view圆角
+-(instancetype)cornerRadius:(CGFloat)radius;
 
 
 

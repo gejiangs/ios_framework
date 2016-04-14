@@ -21,9 +21,7 @@
 }
 
 - (NSString *)sorterFirstName {
-    if (nil != _firstNamePhonetic && ![_firstNamePhonetic isEqualToString:@""]) {
-        return _firstNamePhonetic;
-    }
+    
     if (nil != _firstName && ![_firstName isEqualToString:@""]) {
         return _firstName;
     }
@@ -37,9 +35,7 @@
 }
 
 - (NSString *)sorterLastName {
-    if (nil != _lastNamePhonetic && ![_lastNamePhonetic isEqualToString:@""]) {
-        return _lastNamePhonetic;
-    }
+    
     if (nil != _lastName && ![_lastName isEqualToString:@""]) {
         return _lastName;
     }
@@ -249,11 +245,10 @@
     UILocalizedIndexedCollation *theCollation = [UILocalizedIndexedCollation currentCollation];
     
     // Thanks Steph-Fongo!
-    SEL sorter = ABPersonGetSortOrdering() == kABPersonSortByFirstName ? NSSelectorFromString(@"sorterFirstName") : NSSelectorFromString(@"sorterLastName");
     
     for (ContactModel *contact in contactsTemp) {
         NSInteger sect = [theCollation sectionForObject:contact
-                                collationStringSelector:sorter];
+                                collationStringSelector:@selector(name)];
         contact.sectionNumber = sect;
     }
     
@@ -268,17 +263,32 @@
         [(NSMutableArray *)[sectionArrays objectAtIndex:contact.sectionNumber] addObject:contact];
     }
     
+    int  isNilCount = 0;
     for (int i=0; i<[sectionArrays count]; i++) {
         NSMutableArray *sectionArray = [sectionArrays objectAtIndex:i];
         if ([sectionArray count] == 0) {
             continue;
         }
         
+        for (ContactModel *addressBook2 in sectionArray) {
+            if (addressBook2.name) {
+                isNilCount +=0;
+            } else {
+                isNilCount +=1;
+            }
+        }
+        
         //分组标题
         [self.sectionTitles addObject:[[theCollation sectionTitles] objectAtIndex:i]];
+        
         //通讯录
-        NSArray *sortedSection = [theCollation sortedArrayFromArray:sectionArray collationStringSelector:sorter];
-        [self.contactArray addObject:sortedSection];
+        if (isNilCount >0) {
+            [self.contactArray addObject:sectionArray];
+        }
+        else {
+            NSArray *sortedSection = [theCollation sortedArrayFromArray:sectionArray collationStringSelector:@selector(name)];
+            [self.contactArray addObject:sortedSection];
+        }
     }
     
     block(self.contactArray, self.sectionTitles);

@@ -24,4 +24,7 @@
 // 获取某一点的RGB 和alpha
 - (UIColor *)colorAtpoint:(CGPoint )point;
 
+// 获取屏幕截图
++ (UIImage *)imageWithScreenShot;
+
 @end

@@ -13,7 +13,7 @@
 
 @implementation UIView (Utils)
 
-#pragma mark -- 添加 UILabel
+#pragma mark - 添加 UILabel
 
 //当前view添加label,系统字体，系统颜色
 -(UILabel *)addLabelWithText:(NSString *)text
@@ -55,7 +55,7 @@
 
 
 
-#pragma mark -- UITextField
+#pragma mark - UITextField
 
 //当前view添加UITextField,指定delegate,指定字体大小
 -(UITextField *)addTextFieldWithDelegate:(id)delegate fontSize:(CGFloat)fontSize
@@ -79,7 +79,7 @@
     return textField;
 }
 
-#pragma mark -- UIButton
+#pragma mark - UIButton
 
 //当前view添加UIButton,指定target,指定action
 -(UIButton *)addButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
@@ -95,7 +95,7 @@
     return btn;
 }
 
-#pragma mark -- UITextView
+#pragma mark - UITextView
 
 //当前view添加UITextView,指定delegate,指定字体大小
 -(UITextView *)addTextViewWithDelegate:(id)delegate fontSize:(CGFloat)fontSize
@@ -133,7 +133,7 @@
     return scrollView;
 }
 
-#pragma mark -- 多view水平分布
+#pragma mark - 多view水平分布
 - (void) distributeSpacingHorizontallyWith:(NSArray*)views
 {
     NSMutableArray *spaces = [NSMutableArray arrayWithCapacity:views.count+1];
@@ -183,7 +183,7 @@
     
 }
 
-#pragma mark -- 多view垂直分布
+#pragma mark - 多view垂直分布
 - (void) distributeSpacingVerticallyWith:(NSArray*)views
 {
     NSMutableArray *spaces = [NSMutableArray arrayWithCapacity:views.count+1];
@@ -272,6 +272,9 @@
 - (void)showSuccessActivityView:(NSString *)text image:(UIImage *)image
 {
     MBProgressHUD *hud = [MBProgressHUD HUDForView:self];
+    if (hud == nil) {
+        hud = [[MBProgressHUD alloc] initWithView:self];
+    }
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     hud.customView = imageView;
     hud.mode = MBProgressHUDModeCustomView;
@@ -324,6 +327,19 @@
 - (void)showToastText:(NSString *)text bottomOffset:(CGFloat) bottomOffset duration:(CGFloat) duration
 {
     [ToastView showWithText:text inView:self bottomOffset:bottomOffset duration:duration];
+}
+
+//设置view圆角
+-(instancetype)cornerRadius:(CGFloat)radius
+{
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:radius];
+    
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.layer.mask = maskLayer;
+    
+    return self;
 }
 
 @end
