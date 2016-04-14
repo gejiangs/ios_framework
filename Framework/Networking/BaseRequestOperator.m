@@ -9,8 +9,11 @@
 #import "BaseRequestOperator.h"
 #import "AFHTTPRequestOperation.h"
 
+@implementation RequestManager
 
-@implementation FileModel
+@end
+
+@implementation RequestFileModel
 
 -(id)init
 {
@@ -101,7 +104,7 @@
  */
 -(void)uploadImageWithURL:(NSString *)url
                    params:(NSDictionary *)params
-                fileModel:(FileModel *)model
+                fileModel:(RequestFileModel *)model
                   success:(requestCompletionSuccessHandler)success
                   failure:(requestCompletionFailureHandler)failure
 {
@@ -119,7 +122,7 @@
  */
 -(void)uploadImageWithURL:(NSString *)url
                    params:(NSDictionary *)params
-                fileModel:(FileModel *)model
+                fileModel:(RequestFileModel *)model
                  progress:(uploadProgress)progress
                   success:(requestCompletionSuccessHandler)success
                   failure:(requestCompletionFailureHandler)failure
@@ -167,7 +170,7 @@
     self.failureHandler = failure;
     
     void(^bodyWithBlock)(id<AFMultipartFormData> formData)= ^(id<AFMultipartFormData> formData){
-        for (FileModel *model in models) {
+        for (RequestFileModel *model in models) {
             [formData appendPartWithFileData:model.fileData
                                         name:model.name
                                     fileName:model.fileName

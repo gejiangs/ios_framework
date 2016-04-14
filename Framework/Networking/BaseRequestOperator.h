@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RequestManager.h"
-#import "BaseModel.h"
+
+@class AFHTTPRequestOperation;
 
 typedef void(^requestCompletionSuccessHandler)(BOOL succ, NSString *msg, id responseObject);
 typedef void(^requestCompletionFailureHandler)(NSError *error);
@@ -16,7 +16,17 @@ typedef void(^requestCompletionHandler)();
 typedef void(^uploadProgress)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite);
 
 
-@interface FileModel : BaseModel
+#pragma mark - 请求体
+@interface RequestManager : NSObject
+
+@property (nonatomic, strong) AFHTTPRequestOperation *operation;
+
+@end
+
+
+
+#pragma mark - 上传文件model
+@interface RequestFileModel : NSObject
 
 @property (nonatomic, strong)   NSData *fileData;       //文件数据
 @property (nonatomic, copy)     NSString *name;         //参数名（一般为file）
@@ -25,8 +35,8 @@ typedef void(^uploadProgress)(NSUInteger bytesWritten, long long totalBytesWritt
 
 @end
 
-@class AFHTTPRequestOperation;
 
+#pragma mark - 网络请求基类
 @interface BaseRequestOperator : NSObject
 
 @property (nonatomic, strong) AFHTTPRequestOperation *afRequest;
@@ -70,7 +80,7 @@ typedef void(^uploadProgress)(NSUInteger bytesWritten, long long totalBytesWritt
  */
 -(void)uploadImageWithURL:(NSString *)url
                    params:(NSDictionary *)params
-                fileModel:(FileModel *)model
+                fileModel:(RequestFileModel *)model
                   success:(requestCompletionSuccessHandler)success
                   failure:(requestCompletionFailureHandler)failure;
 
@@ -86,7 +96,7 @@ typedef void(^uploadProgress)(NSUInteger bytesWritten, long long totalBytesWritt
  */
 -(void)uploadImageWithURL:(NSString *)url
                    params:(NSDictionary *)params
-                fileModel:(FileModel *)model
+                fileModel:(RequestFileModel *)model
                  progress:(uploadProgress)progress
                   success:(requestCompletionSuccessHandler)success
                   failure:(requestCompletionFailureHandler)failure;
