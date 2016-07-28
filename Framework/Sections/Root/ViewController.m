@@ -38,7 +38,7 @@
     NSLog(@"Shop for Valentine's Day by %@", string);
     
     
-    NSArray *array = @[@{@"title":@"网络请求", @"class":@"ScrollViewController"},
+    NSArray *array = @[@{@"title":@"网络请求", @"class":@"RequestViewController"},
                          @{@"title":@"多图合并视频",@"class":@"ImageConvertVedioViewController"},
                          @{@"title":@"多任务请求",@"class":@"MultiTaskRequestViewController"},
                          @{@"title":@"AutoLayout 动画", @"class":@"AnimateViewController"},

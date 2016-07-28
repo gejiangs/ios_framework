@@ -191,7 +191,6 @@
 		ADD393571A885241007DFF8D /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3934E1A885241007DFF8D /* UIScrollView+MJRefresh.m */; };
 		ADD393581A885241007DFF8D /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD393501A885241007DFF8D /* UIView+MJExtension.m */; };
 		ADD3935B1A888E1A007DFF8D /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3935A1A888E1A007DFF8D /* BaseModel.m */; };
-		ADD968871CCE118800618F60 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD968861CCE118800618F60 /* ScrollViewController.m */; };
 		ADD9C7161C16AEB900B03718 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD9C7151C16AEB900B03718 /* UIImage+Resize.m */; };
 		ADD9C7191C16B58700B03718 /* ImageConvertVedioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD9C7181C16B58700B03718 /* ImageConvertVedioViewController.m */; };
 		ADD9C7271C16BC9000B03718 /* HJImagesToVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD9C7261C16BC9000B03718 /* HJImagesToVideo.m */; };
@@ -622,8 +621,6 @@
 		ADD393501A885241007DFF8D /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		ADD393591A888E1A007DFF8D /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		ADD3935A1A888E1A007DFF8D /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
-		ADD968851CCE118800618F60 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
-		ADD968861CCE118800618F60 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
 		ADD9C7141C16AEB900B03718 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		ADD9C7151C16AEB900B03718 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		ADD9C7171C16B58700B03718 /* ImageConvertVedioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageConvertVedioViewController.h; sourceTree = "<group>"; };
@@ -1360,8 +1357,6 @@
 				AD4CC2E81B9EBBCD009CC59E /* PlacehodlerTextViewController.xib */,
 				ADED5B9B1C71651D00CD0613 /* PublishTopicViewController.h */,
 				ADED5B9C1C71651D00CD0613 /* PublishTopicViewController.m */,
-				ADD968851CCE118800618F60 /* ScrollViewController.h */,
-				ADD968861CCE118800618F60 /* ScrollViewController.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1924,7 +1919,6 @@
 				AD3D0F081B1D41360048E80D /* QBImagePickerGroupCell.m in Sources */,
 				C996667E1D48A8BC00471D5F /* GFInfoListFrameModel.m in Sources */,
 				ADD9C7191C16B58700B03718 /* ImageConvertVedioViewController.m in Sources */,
-				ADD968871CCE118800618F60 /* ScrollViewController.m in Sources */,
 				ADC726FC1AAFF54F00B567C1 /* MBProgressHUD.m in Sources */,
 				BF8467CA1B7454BD0023824D /* MJExtensionViewController.m in Sources */,
 				AD61A45E1AAECDCD000CE8F3 /* GCDAsyncSocket.m in Sources */,
