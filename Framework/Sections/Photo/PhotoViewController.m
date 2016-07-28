@@ -33,7 +33,7 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
     
     self.title = @"拍摄";
     
-    [self addRightBarButton:@"切换摄像头" target:self action:@selector(toggleButtonClick)];
+    [self addRightBarTitle:@"切换摄像头" target:self action:@selector(toggleButtonClick)];
     
 }
 

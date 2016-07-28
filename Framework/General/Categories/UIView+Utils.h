@@ -106,8 +106,8 @@
 //设置view圆角
 -(instancetype)cornerRadius:(CGFloat)radius;
 
-
-
+//返回当前view的VC控制器
+-(UIViewController *)mainViewController;
 
 
 

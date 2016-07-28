@@ -34,7 +34,7 @@
     self.collectionView.backgroundColor = [UIColor clearColor];
     [self.collectionView registerClass:[PictureCollectionCell class] forCellWithReuseIdentifier:@"cell"];
 
-    [self addRightBarButton:@"添加" target:self action:@selector(rightClicked:)];
+    [self addRightBarTitle:@"添加" target:self action:@selector(rightClicked:)];
 }
 
 -(void)rightClicked:(UIBarButtonItem *)sender

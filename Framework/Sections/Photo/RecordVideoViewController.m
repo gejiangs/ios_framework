@@ -49,7 +49,7 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
     
     [self clearRecordCache];
     
-    [self addLeftBarButton:@"取消" target:self action:@selector(leftMenuPressed:)];
+    [self addRightBarTitle:@"取消" target:self action:@selector(leftMenuPressed:)];
     
     self.timeLineConstrain.constant = self.view.frame.size.width;
     

@@ -89,7 +89,7 @@
     self.smallPlayButton.hidden = YES;
     self.actionButton.hidden = YES;
     
-    [self addRightBarButton:@"录制" target:self action:@selector(recordVideo)];
+    [self addRightBarTitle:@"录制" target:self action:@selector(recordVideo)];
 }
 
 //区域内播放视频

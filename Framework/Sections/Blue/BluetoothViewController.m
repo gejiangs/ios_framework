@@ -21,7 +21,7 @@
     
     [[BluetoothManager shareManager] initCentral];
     
-    [self addRightBarButton:@"扫描" target:self action:@selector(startScan)];
+    [self addRightBarTitle:@"扫描" target:self action:@selector(startScan)];
 }
 
 -(void)startScan

@@ -21,10 +21,24 @@
     
     self.title = @"框架demo";
     
-    [self addRightBarButton:@"手动截屏" target:self action:@selector(rightCliked:)];
+    [self addRightBarTitle:@"手动截屏" target:self action:@selector(rightCliked:)];
+    
+    NSDate *date = [NSDate date];
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.day = -1;
+    date = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:date options:0];
     
     
-    NSArray *array = @[@{@"title":@"网络请求", @"class":@"RequestViewController"},
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.dateFormat = @"yyyy-MM-dd";
+    
+    NSString *string = [df stringFromDate:date];
+    
+    NSLog(@"Shop for Valentine's Day by %@", string);
+    
+    
+    NSArray *array = @[@{@"title":@"网络请求", @"class":@"ScrollViewController"},
                          @{@"title":@"多图合并视频",@"class":@"ImageConvertVedioViewController"},
                          @{@"title":@"多任务请求",@"class":@"MultiTaskRequestViewController"},
                          @{@"title":@"AutoLayout 动画", @"class":@"AnimateViewController"},
@@ -40,7 +54,9 @@
                          @{@"title":@"录制短视频", @"class":@"VideoViewController"},
                          @{@"title":@"MJExtension示例",@"class":@"MJExtensionViewController"},
                          @{@"title":@"蓝牙连接",@"class":@"BluetoothViewController"},
-                         @{@"title":@"系统设置页面跳转",@"class":@"SystemSettingViewController"}];
+                         @{@"title":@"系统设置页面跳转",@"class":@"SystemSettingViewController"},
+                       @{@"title":@"资讯",@"class":@"GFInfoViewController"},
+                    ];
     
     self.contentList = [NSMutableArray arrayWithArray:array];
     

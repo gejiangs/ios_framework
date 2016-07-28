@@ -20,12 +20,14 @@
 #import "UMSocialWhatsappHandler.h"
 #import "UMSocialLineHandler.h"
 #import "UMSocialTumblrHandler.h"
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<CLLocationManagerDelegate>
 
 @property (nonatomic, unsafe_unretained) UIBackgroundTaskIdentifier bgTask;
 @property (nonatomic, strong) NSTimer *myTimer;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -70,9 +72,40 @@
     
     
     NSLog(@"didFinishLaunchingWithOptions");
-    
+    [self initLocationManager];
     return YES;
 }
+
+-(void)initLocationManager
+{
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    
+    //开始定位
+    [self.locationManager startUpdatingLocation];
+    //设置location授权
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+    {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+}
+
+#pragma mark - CLLocationManager Delegate
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *cl = [locations objectAtIndex:0];
+    NSLog(@"纬度--%f；经度--%f",cl.coordinate.latitude,cl.coordinate.longitude);
+    
+}
+
+//获取定位失败回调方法
+#pragma mark - location Delegate
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"Location error!");
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -127,14 +160,6 @@
 }
 
 
-- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
-{
-    if (!self.isFull) {
-        return UIInterfaceOrientationMaskPortrait;
-    }
-    
-    return UIInterfaceOrientationMaskLandscapeRight | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskPortrait;
-}
 
 -(void)runTimer
 {

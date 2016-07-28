@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "MJExtension.h"
 @interface ContactModel : NSObject
 
 @property (nonatomic, assign)   NSInteger sectionNumber;

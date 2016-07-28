@@ -68,8 +68,8 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellIdentifier"];
     
     self.contentList = @[@{@"title":@"WIFI",@"urlString":@"prefs:root=WIFI"},
-                         @{@"title":@"定位服务",@"urlString":@"prefs:root=FACETIME"},
-                         @{@"title":@"FACETIME",@"urlString":@"prefs:root=LOCATION_SERVICES"},
+                         @{@"title":@"定位服务",@"urlString":@"prefs:root=LOCATION_SERVICES"},
+                         @{@"title":@"FACETIME",@"urlString":@"prefs:root=FACETIME"},
                          @{@"title":@"音乐",@"urlString":@"prefs:root=MUSIC"},
                          @{@"title":@"墙纸设置界面",@"urlString":@"prefs:root=Wallpaper"},
                          @{@"title":@"蓝牙设置界面",@"urlString":@"prefs:root=Bluetooth"},

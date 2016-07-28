@@ -9,7 +9,9 @@
 #import "AddressBookManager.h"
 #import <AddressBook/AddressBook.h>
 
+
 @implementation ContactModel
+MJCodingImplementation
 
 -(id)init
 {

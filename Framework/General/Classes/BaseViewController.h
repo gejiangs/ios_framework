@@ -14,8 +14,11 @@
 -(void)pushViewControllerName:(NSString *)VCName;
 -(void)pushViewControllerName:(NSString *)VCName animated:(BOOL)animated;
 
--(void)addLeftBarButton:(NSString *)title target:(id)target action:(SEL)action;
--(void)addRightBarButton:(NSString *)title target:(id)target action:(SEL)action;
+-(void)addLeftBarTitle:(NSString *)title target:(id)target action:(SEL)action;
+-(void)addRightBarTitle:(NSString *)title target:(id)target action:(SEL)action;
+
+-(void)addLeftBarImageName:(NSString *)imageName target:(id)target action:(SEL)action;
+-(void)addRightBarImageName:(NSString *)imageName target:(id)target action:(SEL)action;
 
 #pragma mark 键盘通知
 -(void)enableKeyboardNotification;

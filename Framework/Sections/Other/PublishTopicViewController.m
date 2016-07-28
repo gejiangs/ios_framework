@@ -44,7 +44,7 @@
 -(void)initUI
 {
 //    [self addLeftBarButton:@"取消" target:self action:@selector(leftClicked:)];
-    [self addRightBarButton:@"发送" target:self action:@selector(rightClicked:)];
+    [self addRightBarTitle:@"发送" target:self action:@selector(rightClicked:)];
 }
 
 #pragma mark - UIButton Clicked

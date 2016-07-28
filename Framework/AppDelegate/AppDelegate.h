@@ -13,7 +13,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (nonatomic)   BOOL isFull;
 
 @end
 

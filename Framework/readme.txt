@@ -38,12 +38,7 @@
 (Networking) 网络请求基本封装
 
     Networking
-    |-Helpers                   (这个目录放一些助手类，文件名与功能挂钩。里面大概是这样：)
-        |- BaseHelper               (基类)
-        |- TPKShareHelper
-        |- TPDBHelper
-        |- TPKEmotionHelper
-        ...
+    |-RequestManager            (请求管理对象)
     |-BaseRequestOperator       (基本请求，get,post,图片上传,多请求)
 
 (Manager)  项目单例目录
