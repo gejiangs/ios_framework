@@ -222,13 +222,17 @@
 		BF8467C51B74520A0023824D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8467BC1B74520A0023824D /* Student.m */; };
 		BF8467C61B74520A0023824D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8467BE1B74520A0023824D /* User.m */; };
 		BF8467CA1B7454BD0023824D /* MJExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8467C91B7454BD0023824D /* MJExtensionViewController.m */; };
-		C99666781D48A8BC00471D5F /* GFInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C996666B1D48A8BC00471D5F /* GFInfoViewController.m */; };
-		C99666791D48A8BC00471D5F /* GFInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C996666D1D48A8BC00471D5F /* GFInfoTableViewCell.m */; };
-		C996667A1D48A8BC00471D5F /* GFFirstButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C996666F1D48A8BC00471D5F /* GFFirstButton.m */; };
-		C996667B1D48A8BC00471D5F /* GFOtherButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C99666711D48A8BC00471D5F /* GFOtherButton.m */; };
-		C996667C1D48A8BC00471D5F /* GFInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C99666731D48A8BC00471D5F /* GFInfoModel.m */; };
-		C996667D1D48A8BC00471D5F /* GFInfoListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C99666751D48A8BC00471D5F /* GFInfoListModel.m */; };
-		C996667E1D48A8BC00471D5F /* GFInfoListFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C99666771D48A8BC00471D5F /* GFInfoListFrameModel.m */; };
+		C91F385C1D49B27800324AE6 /* GFFirstButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F38471D49B27800324AE6 /* GFFirstButton.m */; };
+		C91F385D1D49B27800324AE6 /* GFFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F38491D49B27800324AE6 /* GFFirstTableViewCell.m */; };
+		C91F385E1D49B27800324AE6 /* GFInfoListFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F384B1D49B27800324AE6 /* GFInfoListFrameModel.m */; };
+		C91F385F1D49B27800324AE6 /* GFInfoListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F384D1D49B27800324AE6 /* GFInfoListModel.m */; };
+		C91F38601D49B27800324AE6 /* GFInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F384F1D49B27800324AE6 /* GFInfoModel.m */; };
+		C91F38611D49B27800324AE6 /* GFInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F38511D49B27800324AE6 /* GFInfoTableViewCell.m */; };
+		C91F38621D49B27800324AE6 /* GFInfoTableViewCellWithButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F38531D49B27800324AE6 /* GFInfoTableViewCellWithButtons.m */; };
+		C91F38631D49B27800324AE6 /* GFInfoTableViewCellWithTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F38551D49B27800324AE6 /* GFInfoTableViewCellWithTableView.m */; };
+		C91F38641D49B27800324AE6 /* GFInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F38571D49B27800324AE6 /* GFInfoViewController.m */; };
+		C91F38651D49B27800324AE6 /* GFOtherButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F38591D49B27800324AE6 /* GFOtherButton.m */; };
+		C91F38661D49B27800324AE6 /* GFOtherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F385B1D49B27800324AE6 /* GFOtherTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -682,20 +686,28 @@
 		BF8467BE1B74520A0023824D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		BF8467C81B7454BD0023824D /* MJExtensionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionViewController.h; sourceTree = "<group>"; };
 		BF8467C91B7454BD0023824D /* MJExtensionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionViewController.m; sourceTree = "<group>"; };
-		C996666A1D48A8BC00471D5F /* GFInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInfoViewController.h; sourceTree = "<group>"; };
-		C996666B1D48A8BC00471D5F /* GFInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInfoViewController.m; sourceTree = "<group>"; };
-		C996666C1D48A8BC00471D5F /* GFInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInfoTableViewCell.h; sourceTree = "<group>"; };
-		C996666D1D48A8BC00471D5F /* GFInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInfoTableViewCell.m; sourceTree = "<group>"; };
-		C996666E1D48A8BC00471D5F /* GFFirstButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFFirstButton.h; sourceTree = "<group>"; };
-		C996666F1D48A8BC00471D5F /* GFFirstButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFFirstButton.m; sourceTree = "<group>"; };
-		C99666701D48A8BC00471D5F /* GFOtherButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFOtherButton.h; sourceTree = "<group>"; };
-		C99666711D48A8BC00471D5F /* GFOtherButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFOtherButton.m; sourceTree = "<group>"; };
-		C99666721D48A8BC00471D5F /* GFInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInfoModel.h; sourceTree = "<group>"; };
-		C99666731D48A8BC00471D5F /* GFInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInfoModel.m; sourceTree = "<group>"; };
-		C99666741D48A8BC00471D5F /* GFInfoListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInfoListModel.h; sourceTree = "<group>"; };
-		C99666751D48A8BC00471D5F /* GFInfoListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInfoListModel.m; sourceTree = "<group>"; };
-		C99666761D48A8BC00471D5F /* GFInfoListFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInfoListFrameModel.h; sourceTree = "<group>"; };
-		C99666771D48A8BC00471D5F /* GFInfoListFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInfoListFrameModel.m; sourceTree = "<group>"; };
+		C91F38461D49B27800324AE6 /* GFFirstButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFFirstButton.h; sourceTree = "<group>"; };
+		C91F38471D49B27800324AE6 /* GFFirstButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFFirstButton.m; sourceTree = "<group>"; };
+		C91F38481D49B27800324AE6 /* GFFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFFirstTableViewCell.h; sourceTree = "<group>"; };
+		C91F38491D49B27800324AE6 /* GFFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFFirstTableViewCell.m; sourceTree = "<group>"; };
+		C91F384A1D49B27800324AE6 /* GFInfoListFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInfoListFrameModel.h; sourceTree = "<group>"; };
+		C91F384B1D49B27800324AE6 /* GFInfoListFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInfoListFrameModel.m; sourceTree = "<group>"; };
+		C91F384C1D49B27800324AE6 /* GFInfoListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInfoListModel.h; sourceTree = "<group>"; };
+		C91F384D1D49B27800324AE6 /* GFInfoListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInfoListModel.m; sourceTree = "<group>"; };
+		C91F384E1D49B27800324AE6 /* GFInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInfoModel.h; sourceTree = "<group>"; };
+		C91F384F1D49B27800324AE6 /* GFInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInfoModel.m; sourceTree = "<group>"; };
+		C91F38501D49B27800324AE6 /* GFInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInfoTableViewCell.h; sourceTree = "<group>"; };
+		C91F38511D49B27800324AE6 /* GFInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInfoTableViewCell.m; sourceTree = "<group>"; };
+		C91F38521D49B27800324AE6 /* GFInfoTableViewCellWithButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInfoTableViewCellWithButtons.h; sourceTree = "<group>"; };
+		C91F38531D49B27800324AE6 /* GFInfoTableViewCellWithButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInfoTableViewCellWithButtons.m; sourceTree = "<group>"; };
+		C91F38541D49B27800324AE6 /* GFInfoTableViewCellWithTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInfoTableViewCellWithTableView.h; sourceTree = "<group>"; };
+		C91F38551D49B27800324AE6 /* GFInfoTableViewCellWithTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInfoTableViewCellWithTableView.m; sourceTree = "<group>"; };
+		C91F38561D49B27800324AE6 /* GFInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInfoViewController.h; sourceTree = "<group>"; };
+		C91F38571D49B27800324AE6 /* GFInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInfoViewController.m; sourceTree = "<group>"; };
+		C91F38581D49B27800324AE6 /* GFOtherButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFOtherButton.h; sourceTree = "<group>"; };
+		C91F38591D49B27800324AE6 /* GFOtherButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFOtherButton.m; sourceTree = "<group>"; };
+		C91F385A1D49B27800324AE6 /* GFOtherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFOtherTableViewCell.h; sourceTree = "<group>"; };
+		C91F385B1D49B27800324AE6 /* GFOtherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFOtherTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1742,20 +1754,28 @@
 		C99666691D48A8AC00471D5F /* News */ = {
 			isa = PBXGroup;
 			children = (
-				C996666A1D48A8BC00471D5F /* GFInfoViewController.h */,
-				C996666B1D48A8BC00471D5F /* GFInfoViewController.m */,
-				C996666C1D48A8BC00471D5F /* GFInfoTableViewCell.h */,
-				C996666D1D48A8BC00471D5F /* GFInfoTableViewCell.m */,
-				C996666E1D48A8BC00471D5F /* GFFirstButton.h */,
-				C996666F1D48A8BC00471D5F /* GFFirstButton.m */,
-				C99666701D48A8BC00471D5F /* GFOtherButton.h */,
-				C99666711D48A8BC00471D5F /* GFOtherButton.m */,
-				C99666721D48A8BC00471D5F /* GFInfoModel.h */,
-				C99666731D48A8BC00471D5F /* GFInfoModel.m */,
-				C99666741D48A8BC00471D5F /* GFInfoListModel.h */,
-				C99666751D48A8BC00471D5F /* GFInfoListModel.m */,
-				C99666761D48A8BC00471D5F /* GFInfoListFrameModel.h */,
-				C99666771D48A8BC00471D5F /* GFInfoListFrameModel.m */,
+				C91F38461D49B27800324AE6 /* GFFirstButton.h */,
+				C91F38471D49B27800324AE6 /* GFFirstButton.m */,
+				C91F38481D49B27800324AE6 /* GFFirstTableViewCell.h */,
+				C91F38491D49B27800324AE6 /* GFFirstTableViewCell.m */,
+				C91F384A1D49B27800324AE6 /* GFInfoListFrameModel.h */,
+				C91F384B1D49B27800324AE6 /* GFInfoListFrameModel.m */,
+				C91F384C1D49B27800324AE6 /* GFInfoListModel.h */,
+				C91F384D1D49B27800324AE6 /* GFInfoListModel.m */,
+				C91F384E1D49B27800324AE6 /* GFInfoModel.h */,
+				C91F384F1D49B27800324AE6 /* GFInfoModel.m */,
+				C91F38501D49B27800324AE6 /* GFInfoTableViewCell.h */,
+				C91F38511D49B27800324AE6 /* GFInfoTableViewCell.m */,
+				C91F38521D49B27800324AE6 /* GFInfoTableViewCellWithButtons.h */,
+				C91F38531D49B27800324AE6 /* GFInfoTableViewCellWithButtons.m */,
+				C91F38541D49B27800324AE6 /* GFInfoTableViewCellWithTableView.h */,
+				C91F38551D49B27800324AE6 /* GFInfoTableViewCellWithTableView.m */,
+				C91F38561D49B27800324AE6 /* GFInfoViewController.h */,
+				C91F38571D49B27800324AE6 /* GFInfoViewController.m */,
+				C91F38581D49B27800324AE6 /* GFOtherButton.h */,
+				C91F38591D49B27800324AE6 /* GFOtherButton.m */,
+				C91F385A1D49B27800324AE6 /* GFOtherTableViewCell.h */,
+				C91F385B1D49B27800324AE6 /* GFOtherTableViewCell.m */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -1902,6 +1922,7 @@
 				AD2AE33B1B57504E00DE6555 /* PlayVideoView.m in Sources */,
 				AD49C1FE1B8DA38300268E48 /* PlacehodlerTextViewController.m in Sources */,
 				AD49C1FB1B8D9EE900268E48 /* PlaceholderTextView.m in Sources */,
+				C91F38661D49B27800324AE6 /* GFOtherTableViewCell.m in Sources */,
 				AD474D171ACA86FA004D2733 /* ViewController.m in Sources */,
 				AD3D42901AFA120F00BF341F /* BannerScrollView.m in Sources */,
 				ADC726D71AAFE8B700B567C1 /* SDWebImageDecoder.m in Sources */,
@@ -1910,14 +1931,16 @@
 				AD321D231B4E205B0004FA0C /* AddressBookManager.m in Sources */,
 				6740393119CC2446004398C4 /* AFHTTPRequestOperation.m in Sources */,
 				ADC726FD1AAFF54F00B567C1 /* README.mdown in Sources */,
+				C91F38631D49B27800324AE6 /* GFInfoTableViewCellWithTableView.m in Sources */,
 				ADC726D61AAFE8B700B567C1 /* SDWebImageCompat.m in Sources */,
+				C91F38651D49B27800324AE6 /* GFOtherButton.m in Sources */,
 				AD370F6D1ACB94E3003589AB /* AnimateViewController.m in Sources */,
+				C91F385C1D49B27800324AE6 /* GFFirstButton.m in Sources */,
 				BF8467AA1B7446A90023824D /* NSObject+MJCoding.m in Sources */,
 				BF2E6A9C1C0E911A0038CFD6 /* SystemSettingViewController.m in Sources */,
 				6740393E19CC2446004398C4 /* UIImageView+AFNetworking.m in Sources */,
 				ADC727411AB02E4900B567C1 /* BaseViewController.m in Sources */,
 				AD3D0F081B1D41360048E80D /* QBImagePickerGroupCell.m in Sources */,
-				C996667E1D48A8BC00471D5F /* GFInfoListFrameModel.m in Sources */,
 				ADD9C7191C16B58700B03718 /* ImageConvertVedioViewController.m in Sources */,
 				ADC726FC1AAFF54F00B567C1 /* MBProgressHUD.m in Sources */,
 				BF8467CA1B7454BD0023824D /* MJExtensionViewController.m in Sources */,
@@ -1929,6 +1952,7 @@
 				AD321D261B4E205B0004FA0C /* LockViewController.m in Sources */,
 				ADC726E01AAFE8B700B567C1 /* UIImageView+HighlightedWebCache.m in Sources */,
 				6740393519CC2446004398C4 /* AFURLSessionManager.m in Sources */,
+				C91F38611D49B27800324AE6 /* GFInfoTableViewCell.m in Sources */,
 				AD321D2D1B4E205B0004FA0C /* ShareViewController.m in Sources */,
 				ADB79F531C17FA0500C998E4 /* TMCache.m in Sources */,
 				AD3D0F021B1D41360048E80D /* QBAssetCollectionViewController.m in Sources */,
@@ -1938,7 +1962,6 @@
 				ADD393551A885241007DFF8D /* MJRefreshHeaderView.m in Sources */,
 				ADC726D91AAFE8B700B567C1 /* SDWebImageDownloaderOperation.m in Sources */,
 				ADD393171A885204007DFF8D /* MASViewAttribute.m in Sources */,
-				C996667B1D48A8BC00471D5F /* GFOtherButton.m in Sources */,
 				AD3121F21AD3DE59004E943D /* NSObject+Utils.m in Sources */,
 				BF8467BF1B74520A0023824D /* Ad.m in Sources */,
 				ADCCD0031A6E347F00455FE2 /* UILabel+Utils.m in Sources */,
@@ -1953,10 +1976,13 @@
 				BF8467C21B74520A0023824D /* Dog.m in Sources */,
 				ADD175821C5625CF0091F769 /* QBPreviewViewController.m in Sources */,
 				AD329AEF1AD50271000BA4B9 /* HUDViewController.m in Sources */,
+				C91F38641D49B27800324AE6 /* GFInfoViewController.m in Sources */,
 				ADD393521A885241007DFF8D /* MJRefreshBaseView.m in Sources */,
 				AD49C1F81B8D5ECC00268E48 /* FilterViewController.m in Sources */,
 				AD370F661ACB91C4003589AB /* MultiTaskRequestViewController.m in Sources */,
 				AD2AE3371B57504200DE6555 /* VideoViewController.m in Sources */,
+				C91F385D1D49B27800324AE6 /* GFFirstTableViewCell.m in Sources */,
+				C91F385E1D49B27800324AE6 /* GFInfoListFrameModel.m in Sources */,
 				ADC726D31AAFE8B700B567C1 /* MKAnnotationView+WebCache.m in Sources */,
 				ADD393161A885204007DFF8D /* MASLayoutConstraint.m in Sources */,
 				ADD175811C5625CF0091F769 /* QBPreviewView.m in Sources */,
@@ -1978,6 +2004,7 @@
 				AD2AE33F1B57505A00DE6555 /* RecordVideoViewController.m in Sources */,
 				AD321D361B4E22AC0004FA0C /* PictureCollectionCell.m in Sources */,
 				BF8467A71B7446A90023824D /* MJFoundation.m in Sources */,
+				C91F385F1D49B27800324AE6 /* GFInfoListModel.m in Sources */,
 				ADD393141A885204007DFF8D /* MASConstraint.m in Sources */,
 				BF8467A81B7446A90023824D /* MJProperty.m in Sources */,
 				6740393219CC2446004398C4 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -1985,17 +2012,16 @@
 				6740393D19CC2446004398C4 /* UIButton+AFNetworking.m in Sources */,
 				ADD393561A885241007DFF8D /* UIScrollView+MJExtension.m in Sources */,
 				BF39FDA31B8F06770088790F /* BaseHelper.m in Sources */,
-				C996667D1D48A8BC00471D5F /* GFInfoListModel.m in Sources */,
 				6740393B19CC2446004398C4 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				ADC726D51AAFE8B700B567C1 /* SDImageCache.m in Sources */,
 				6740393719CC2446004398C4 /* AFSecurityPolicy.m in Sources */,
 				6740394019CC2446004398C4 /* UIRefreshControl+AFNetworking.m in Sources */,
 				ADD393541A885241007DFF8D /* MJRefreshFooterView.m in Sources */,
 				ADE6DA331B8F07F80012148A /* BluetoothViewController.m in Sources */,
+				C91F38601D49B27800324AE6 /* GFInfoModel.m in Sources */,
 				ADED5B9A1C7164DA00CD0613 /* PublishImageCell.m in Sources */,
 				6740394119CC2446004398C4 /* UIWebView+AFNetworking.m in Sources */,
 				BF8467C51B74520A0023824D /* Student.m in Sources */,
-				C996667C1D48A8BC00471D5F /* GFInfoModel.m in Sources */,
 				6740393819CC2446004398C4 /* AFURLRequestSerialization.m in Sources */,
 				ADD393571A885241007DFF8D /* UIScrollView+MJRefresh.m in Sources */,
 				ADC726DE1AAFE8B700B567C1 /* UIImage+MultiFormat.m in Sources */,
@@ -2016,7 +2042,6 @@
 				6732362819D108D500E9544A /* BaseRequestOperator.m in Sources */,
 				6740393919CC2446004398C4 /* AFURLResponseSerialization.m in Sources */,
 				674038DC19CC20CF004398C4 /* main.m in Sources */,
-				C99666791D48A8BC00471D5F /* GFInfoTableViewCell.m in Sources */,
 				BF8467C11B74520A0023824D /* Book.m in Sources */,
 				BF8467C01B74520A0023824D /* Bag.m in Sources */,
 				ADE6DA321B8F07F80012148A /* BluetoothManager.m in Sources */,
@@ -2031,15 +2056,14 @@
 				ADD3931A1A885204007DFF8D /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				AD478DBE1C06DCC300F87405 /* BaseTabBarController.m in Sources */,
 				BF8467AB1B7446A90023824D /* NSObject+MJKeyValue.m in Sources */,
-				C99666781D48A8BC00471D5F /* GFInfoViewController.m in Sources */,
 				ADCCD0111A6E34B700455FE2 /* UIColor+Utils.m in Sources */,
 				AD61A45F1AAECDCD000CE8F3 /* GCDAsyncUdpSocket.m in Sources */,
-				C996667A1D48A8BC00471D5F /* GFFirstButton.m in Sources */,
 				ADD393151A885204007DFF8D /* MASConstraintMaker.m in Sources */,
 				ADD393531A885241007DFF8D /* MJRefreshConst.m in Sources */,
 				AD2E0A611B180806001A5D61 /* ComboxPickerView.m in Sources */,
 				ADCCD0101A6E34B700455FE2 /* UIAlertView+Utils.m in Sources */,
 				AD321D241B4E205B0004FA0C /* AddressBookViewController.m in Sources */,
+				C91F38621D49B27800324AE6 /* GFInfoTableViewCellWithButtons.m in Sources */,
 				AD370F701ACB951B003589AB /* CustomPickView.m in Sources */,
 				ADC727481AB02E8D00B567C1 /* AdModel.m in Sources */,
 				ADC727421AB02E4900B567C1 /* BaseView.m in Sources */,
