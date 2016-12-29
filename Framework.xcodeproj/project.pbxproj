@@ -1929,11 +1929,8 @@
 				ADD393191A885204007DFF8D /* NSArray+MASAdditions.m in Sources */,
 				AD321D231B4E205B0004FA0C /* AddressBookManager.m in Sources */,
 				6740393119CC2446004398C4 /* AFHTTPRequestOperation.m in Sources */,
-<<<<<<< HEAD
-=======
 				ADC726FD1AAFF54F00B567C1 /* README.mdown in Sources */,
 				C91F38631D49B27800324AE6 /* GFInfoTableViewCellWithTableView.m in Sources */,
->>>>>>> origin/master
 				ADC726D61AAFE8B700B567C1 /* SDWebImageCompat.m in Sources */,
 				C91F38651D49B27800324AE6 /* GFOtherButton.m in Sources */,
 				AD370F6D1ACB94E3003589AB /* AnimateViewController.m in Sources */,
