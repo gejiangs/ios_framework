@@ -156,7 +156,6 @@
 		ADC726E21AAFE8B700B567C1 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC726D21AAFE8B700B567C1 /* UIView+WebCacheOperation.m */; };
 		ADC726FB1AAFF54F00B567C1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = ADC726F71AAFF54F00B567C1 /* LICENSE */; };
 		ADC726FC1AAFF54F00B567C1 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC726F91AAFF54F00B567C1 /* MBProgressHUD.m */; };
-		ADC726FD1AAFF54F00B567C1 /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = ADC726FA1AAFF54F00B567C1 /* README.mdown */; };
 		ADC727371AB02DBE00B567C1 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = ADC727361AB02DBE00B567C1 /* readme.txt */; };
 		ADC727401AB02E4900B567C1 /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC7273A1AB02E4900B567C1 /* BaseNavigationViewController.m */; };
 		ADC727411AB02E4900B567C1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC7273C1AB02E4900B567C1 /* BaseViewController.m */; };
@@ -549,7 +548,6 @@
 		ADC726F71AAFF54F00B567C1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		ADC726F81AAFF54F00B567C1 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		ADC726F91AAFF54F00B567C1 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		ADC726FA1AAFF54F00B567C1 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
 		ADC727361AB02DBE00B567C1 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		ADC727391AB02E4900B567C1 /* BaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationViewController.h; sourceTree = "<group>"; };
 		ADC7273A1AB02E4900B567C1 /* BaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationViewController.m; sourceTree = "<group>"; };
@@ -1515,7 +1513,6 @@
 				ADC726F71AAFF54F00B567C1 /* LICENSE */,
 				ADC726F81AAFF54F00B567C1 /* MBProgressHUD.h */,
 				ADC726F91AAFF54F00B567C1 /* MBProgressHUD.m */,
-				ADC726FA1AAFF54F00B567C1 /* README.mdown */,
 			);
 			path = MBProgressHUD;
 			sourceTree = "<group>";
@@ -1809,6 +1806,7 @@
 				TargetAttributes = {
 					674038D519CC20CF004398C4 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = B4VX949QFW;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -1817,6 +1815,7 @@
 					};
 					674038EE19CC20CF004398C4 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = B4VX949QFW;
 						TestTargetID = 674038D519CC20CF004398C4;
 					};
 				};
@@ -1909,7 +1908,6 @@
 				ADD393191A885204007DFF8D /* NSArray+MASAdditions.m in Sources */,
 				AD321D231B4E205B0004FA0C /* AddressBookManager.m in Sources */,
 				6740393119CC2446004398C4 /* AFHTTPRequestOperation.m in Sources */,
-				ADC726FD1AAFF54F00B567C1 /* README.mdown in Sources */,
 				ADC726D61AAFE8B700B567C1 /* SDWebImageCompat.m in Sources */,
 				AD370F6D1ACB94E3003589AB /* AnimateViewController.m in Sources */,
 				BF8467AA1B7446A90023824D /* NSObject+MJCoding.m in Sources */,
@@ -2186,6 +2184,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B4VX949QFW;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2196,7 +2195,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Framework/Framework-Prefix.pch";
 				INFOPLIST_FILE = Framework/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2230,6 +2229,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B4VX949QFW;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2240,7 +2240,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Framework/Framework-Prefix.pch";
 				INFOPLIST_FILE = Framework/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2271,6 +2271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B4VX949QFW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2290,6 +2291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B4VX949QFW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

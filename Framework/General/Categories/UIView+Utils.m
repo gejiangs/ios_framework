@@ -133,6 +133,84 @@
     return scrollView;
 }
 
+//当前view添加UIImageView,指定imageName
+-(UIImageView *)addImageViewWithName:(NSString *)imageName
+{
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+    [self addSubview:imageView];
+    
+    return imageView;
+}
+
+//当前view添加UISlider,指定delgate,SEL
+-(UISlider *)addSliderWithTarget:(id)target action:(SEL)sel
+{
+    UISlider *slider = [[UISlider alloc] init];
+    [slider addTarget:target action:sel forControlEvents:UIControlEventValueChanged];
+    [self addSubview:slider];
+    
+    return slider;
+}
+
+//当前view添加UISwitch,指定delgate,SEL
+-(UISwitch *)addSwithWithTarget:(id)target action:(SEL)sel
+{
+    UISwitch *s = [[UISwitch alloc] init];
+    [s addTarget:target action:sel forControlEvents:UIControlEventValueChanged];
+    [self addSubview:s];
+    
+    return s;
+}
+
+//当前view添加垂直UICollectionView,指定delgate
+-(UICollectionView *)addCollectionViewVerticalWithDelegate:(id)delegate
+{
+    return [self addCollectionViewWithDelegate:delegate scrollDirection:UICollectionViewScrollDirectionVertical];
+}
+
+//当前view添加水平UICollectionView,指定delgate
+-(UICollectionView *)addCollectionViewHorizontalWithDelegate:(id)delegate
+{
+    return [self addCollectionViewWithDelegate:delegate scrollDirection:UICollectionViewScrollDirectionHorizontal];
+}
+
+-(UICollectionView *)addCollectionViewWithDelegate:(id)delegate scrollDirection:(UICollectionViewScrollDirection)direction
+{
+    //初始化
+    UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
+    [flowLayout setScrollDirection:direction];
+    
+    UICollectionView *view = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+    view.delegate = delegate;
+    view.dataSource = delegate;
+    view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
+    view.backgroundColor = [UIColor clearColor];
+    view.scrollEnabled = NO;
+    [self addSubview:view];
+    
+    return view;
+}
+
+//当前view添加UIPageControl,指定target, SEL
+-(UIPageControl *)addPageControlWithTarget:(id)target selector:(SEL)sel
+{
+    UIPageControl *pageControl = [[UIPageControl alloc] init];
+    [pageControl addTarget:target action:sel forControlEvents:UIControlEventValueChanged];
+    [self addSubview:pageControl];
+    
+    return pageControl;
+}
+
+//当前view添加UIWebView,指定delgate
+-(UIWebView *)addWebViewWithDelegate:(id)delegate
+{
+    UIWebView *webView = [[UIWebView alloc] init];
+    webView.delegate = delegate;
+    [self addSubview:webView];
+    
+    return webView;
+}
+
 #pragma mark - 多view水平分布
 - (void) distributeSpacingHorizontallyWith:(NSArray*)views
 {
@@ -347,8 +425,7 @@
 {
     for (UIView* next = [self superview]; next; next = next.superview) {
         UIResponder* nextResponder = [next nextResponder];
-        if ([nextResponder isKindOfClass:[UIViewController
-                                          class]]) {
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
             return (UIViewController *)nextResponder;
         }
     }
