@@ -1,32 +1,25 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "13A8E541B5087D328ED4B6999A83F1E33F11E1AD",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0eb94a13-b827-90fe-717e-ce57b7db7bff",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
-    "d6da2906-b76d-4016-bf36-d3172097a6a0++9213" : {
+    "0eb94a13-b827-90fe-717e-ce57b7db7bff" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "13A8E541B5087D328ED4B6999A83F1E33F11E1AD" : 0,
-    "d6da2906-b76d-4016-bf36-d3172097a6a0++9213" : 0
+    "0eb94a13-b827-90fe-717e-ce57b7db7bff" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "27146757-F27E-433C-8B7D-67B3CCE42C4F",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "13A8E541B5087D328ED4B6999A83F1E33F11E1AD" : "ios_framework\/",
-    "d6da2906-b76d-4016-bf36-d3172097a6a0++9213" : ""
+    "0eb94a13-b827-90fe-717e-ce57b7db7bff" : "ios_framework\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Framework",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Framework.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "trunk\/Framework.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gejiangs\/ios_framework.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "13A8E541B5087D328ED4B6999A83F1E33F11E1AD"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.1.234",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gejiangs\/ios_framework",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "d6da2906-b76d-4016-bf36-d3172097a6a0++9213"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0eb94a13-b827-90fe-717e-ce57b7db7bff"
     }
   ]
 }
