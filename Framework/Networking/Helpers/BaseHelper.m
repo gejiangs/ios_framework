@@ -21,7 +21,10 @@
 
 -(BaseRequestOperator *)requestOperator
 {
-    return [[BaseRequestOperator alloc] init];
+    if (_requestOperator == nil) {
+        self.requestOperator = [[BaseRequestOperator alloc] init];
+    }
+    return _requestOperator;
 }
 
 -(void)requestGroupWithManagers:(NSArray *)managers completion:(void (^)())completion

@@ -60,5 +60,25 @@ static char key;
     [alert showAlertViewWithCompleteBlock:block];
 }
 
++(void)showTitle:(NSString *)title message:(NSString *)message block:(CompleteBlock)block buttonTitles:(NSString *)buttonTitles,...
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+    
+    va_list args;
+    va_start(args, buttonTitles);
+    if (buttonTitles)
+    {
+        [alert addButtonWithTitle:buttonTitles];
+        NSString *otherString;
+        while ((otherString = va_arg(args, NSString *)))
+        {
+            [alert addButtonWithTitle:otherString];
+        }
+    }
+    
+    va_end(args);
+    UIAlertController
+    [alert showAlertViewWithCompleteBlock:block];
+}
 
 @end

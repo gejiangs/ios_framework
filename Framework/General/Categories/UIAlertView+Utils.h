@@ -15,5 +15,6 @@ typedef void(^CompleteBlock) (NSInteger buttonIndex);
 - (void)showAlertViewWithCompleteBlock:(CompleteBlock) block;
 
 +(void)showTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle otherTitles:(NSArray *)otherTitles block:(CompleteBlock)block;
++(void)showTitle:(NSString *)title message:(NSString *)message block:(CompleteBlock)block buttonTitles:(NSString *)buttonTitles,...;
 
 @end
