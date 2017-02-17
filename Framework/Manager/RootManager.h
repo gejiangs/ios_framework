@@ -12,4 +12,6 @@
 
 + (instancetype)sharedManager;
 
+-(NSDateFormatter *)dateFormatter;
+
 @end

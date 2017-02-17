@@ -9,6 +9,12 @@
 #import "RootManager.h"
 #import "AppDelegate.h"
 
+@interface RootManager ()
+
+@property (nonatomic, strong)   NSDateFormatter *dateFormatter;
+
+@end
+
 @implementation RootManager
 
 + (instancetype)sharedManager {
@@ -20,6 +26,15 @@
     });
     return _sharedInstance;
     
+}
+
+-(NSDateFormatter *)dateFormatter
+{
+    if (_dateFormatter != nil) {
+        return _dateFormatter;
+    }
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    return _dateFormatter;
 }
 
 @end

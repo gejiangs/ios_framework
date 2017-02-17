@@ -94,8 +94,8 @@
 {
     NSArray *times = [timeString componentsSeparatedByString:@":"];
     if (times.count == 2) {
-        NSInteger row1 = [StringFormat(times[0]) integerValue];
-        NSInteger row2 = [StringFormat(times[1]) integerValue];
+        NSInteger row1 = [times[0] integerValue];
+        NSInteger row2 = [times[1] integerValue];
         
         [self.picker selectRow:row1 inComponent:0 animated:NO];
         [self.picker selectRow:row2 inComponent:1 animated:NO];

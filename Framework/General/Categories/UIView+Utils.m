@@ -27,6 +27,12 @@
     return [self addLabelWithText:text font:font color:nil];
 }
 
+//当前view添加label,指定字体，系统颜色
+-(UILabel *)addLabelWithText:(NSString *)text fontSize:(int)fontSize
+{
+    return [self addLabelWithText:text font:[UIFont systemFontOfSize:fontSize] color:nil];
+}
+
 //当前view添加label,系统字体，指定颜色
 -(UILabel *)addLabelWithText:(NSString *)text color:(UIColor *)color
 {

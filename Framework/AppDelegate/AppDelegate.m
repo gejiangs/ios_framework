@@ -71,6 +71,7 @@
     [UMSocialLineHandler openLineShare:UMSocialLineMessageTypeImage];
     
     
+    
     NSLog(@"didFinishLaunchingWithOptions");
     [self initLocationManager];
     return YES;

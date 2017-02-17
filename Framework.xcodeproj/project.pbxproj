@@ -38,6 +38,7 @@
 		67F5FD671A036D0800C51428 /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 67F5FD621A036D0800C51428 /* zbar-samples.png */; };
 		67F5FD741A03729A00C51428 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F5FD711A03725600C51428 /* AVFoundation.framework */; };
 		67F5FD761A0372F100C51428 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F5FD751A0372F100C51428 /* libiconv.dylib */; };
+		AD29BAA51E4D88DF00C77276 /* NSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = AD29BAA41E4D88DF00C77276 /* NSDate+Utils.m */; };
 		AD2AE3371B57504200DE6555 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2AE3351B57504200DE6555 /* VideoViewController.m */; };
 		AD2AE33B1B57504E00DE6555 /* PlayVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2AE33A1B57504E00DE6555 /* PlayVideoView.m */; };
 		AD2AE33F1B57505A00DE6555 /* RecordVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2AE33D1B57505A00DE6555 /* RecordVideoViewController.m */; };
@@ -298,7 +299,6 @@
 		6740395B19CC2C0B004398C4 /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		6740395C19CC2C0B004398C4 /* AppServerMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServerMacro.h; sourceTree = "<group>"; };
 		6740395D19CC2C0B004398C4 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
-		6740395E19CC2C0B004398C4 /* UtilsMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilsMacro.h; sourceTree = "<group>"; };
 		67F5FD491A036D0800C51428 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		67F5FD4A1A036D0800C51428 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		67F5FD4B1A036D0800C51428 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -326,6 +326,8 @@
 		67F5FD621A036D0800C51428 /* zbar-samples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-samples.png"; sourceTree = "<group>"; };
 		67F5FD711A03725600C51428 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		67F5FD751A0372F100C51428 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		AD29BAA31E4D88DF00C77276 /* NSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utils.h"; sourceTree = "<group>"; };
+		AD29BAA41E4D88DF00C77276 /* NSDate+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utils.m"; sourceTree = "<group>"; };
 		AD2AE3341B57504200DE6555 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		AD2AE3351B57504200DE6555 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		AD2AE3391B57504E00DE6555 /* PlayVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayVideoView.h; sourceTree = "<group>"; };
@@ -853,7 +855,6 @@
 				6740395D19CC2C0B004398C4 /* Macro.h */,
 				6740395B19CC2C0B004398C4 /* AppMacro.h */,
 				6740395C19CC2C0B004398C4 /* AppServerMacro.h */,
-				6740395E19CC2C0B004398C4 /* UtilsMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -1590,6 +1591,8 @@
 				ADD9C7151C16AEB900B03718 /* UIImage+Resize.m */,
 				AD3121F01AD3DE59004E943D /* NSObject+Utils.h */,
 				AD3121F11AD3DE59004E943D /* NSObject+Utils.m */,
+				AD29BAA31E4D88DF00C77276 /* NSDate+Utils.h */,
+				AD29BAA41E4D88DF00C77276 /* NSDate+Utils.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1929,7 +1932,6 @@
 				ADD393191A885204007DFF8D /* NSArray+MASAdditions.m in Sources */,
 				AD321D231B4E205B0004FA0C /* AddressBookManager.m in Sources */,
 				6740393119CC2446004398C4 /* AFHTTPRequestOperation.m in Sources */,
-				ADC726FD1AAFF54F00B567C1 /* README.mdown in Sources */,
 				C91F38631D49B27800324AE6 /* GFInfoTableViewCellWithTableView.m in Sources */,
 				ADC726D61AAFE8B700B567C1 /* SDWebImageCompat.m in Sources */,
 				C91F38651D49B27800324AE6 /* GFOtherButton.m in Sources */,
@@ -2067,6 +2069,7 @@
 				ADC727481AB02E8D00B567C1 /* AdModel.m in Sources */,
 				ADC727421AB02E4900B567C1 /* BaseView.m in Sources */,
 				AD2C346E1B3AA383003B9E16 /* BaseTableViewController.m in Sources */,
+				AD29BAA51E4D88DF00C77276 /* NSDate+Utils.m in Sources */,
 				ADCCD00F1A6E34B700455FE2 /* NSString+Utils.m in Sources */,
 				ADE6DA311B8F07F80012148A /* BluetoothManager+Category.m in Sources */,
 				ADC726DC1AAFE8B700B567C1 /* UIButton+WebCache.m in Sources */,
@@ -2242,6 +2245,7 @@
 					"$(PROJECT_DIR)/Framework/Vendors/UMSocial_Sdk_Extra_Frameworks/Whatsapp",
 					"$(PROJECT_DIR)/Framework/Vendors/UMSocial_Sdk_Extra_Frameworks/YiXin",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daCheng.Framework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -2287,6 +2291,7 @@
 					"$(PROJECT_DIR)/Framework/Vendors/UMSocial_Sdk_Extra_Frameworks/Whatsapp",
 					"$(PROJECT_DIR)/Framework/Vendors/UMSocial_Sdk_Extra_Frameworks/YiXin",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daCheng.Framework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

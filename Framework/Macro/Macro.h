@@ -11,7 +11,7 @@
 
 #pragma mark - 通用宏定义
 
-#include "UtilsMacro.h"
+#include "RootManager.h"
 #include "AppMacro.h"
 #include "AppServerMacro.h"
 
@@ -27,5 +27,6 @@
 #include "UIColor+Utils.h"
 #include "UIImage+Utils.h"
 #include "NSObject+Utils.h"
+#include "NSDate+Utils.h"
 
 #endif
