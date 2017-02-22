@@ -164,7 +164,7 @@
 
 -(void)runTimer
 {
-    NSLog(@"run timer ");
+    
 }
 
 @end

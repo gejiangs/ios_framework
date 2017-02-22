@@ -10,6 +10,8 @@
 
 @interface RootManager : NSObject
 
+@property (nonatomic, readonly, copy)   NSString *name;
+
 + (instancetype)sharedManager;
 
 -(NSDateFormatter *)dateFormatter;

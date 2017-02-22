@@ -11,7 +11,10 @@
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong)   UIButton *handlerView;
-
+@property (nonatomic, strong)   UILabel *timerLabel;
+@property (retain,nonatomic)    NSString *rStr;
+@property (copy, nonatomic)     NSString *cStr;
+@property (strong, nonatomic)   NSString *sStr;
 @end
 
 @implementation ViewController
@@ -36,7 +39,6 @@
     NSString *string = [df stringFromDate:date];
     
     NSLog(@"Shop for Valentine's Day by %@", string);
-    
     
     NSArray *array = @[@{@"title":@"网络请求", @"class":@"RequestViewController"},
                          @{@"title":@"多图合并视频",@"class":@"ImageConvertVedioViewController"},
@@ -63,6 +65,31 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(userDidTakeScreenshot)
                                                  name:UIApplicationUserDidTakeScreenshotNotification object:nil];
+    
+    NSLog(@"root.name:%@", [RootManager sharedManager].name);
+    
+//    NSMutableString *mStr = [NSMutableString stringWithFormat:@"abc"];
+    NSString *mStr = @"abc";
+    
+    self.rStr   = mStr;
+    self.cStr     = mStr;
+    self.sStr     = mStr;
+    NSLog(@"mStr:%p,%p",  mStr,&mStr);
+    NSLog(@"retainStr:%p,%p", _rStr, &_rStr);
+    NSLog(@"copyStr:%p,%p",   _cStr, &_cStr);
+    NSLog(@"strongStr:%p,%p",   _sStr, &_sStr);
+    
+//    mStr = [@"de" mutableCopy];
+//    [mStr appendString:@"de"];
+    mStr = @"abcde";
+    NSLog(@"retainStr:%@",  _rStr);
+    NSLog(@"copyStr:%@",    _cStr);
+    NSLog(@"strongStr:%@",    _cStr);
+    
+    NSLog(@"mStr:%p,%p",  mStr,&mStr);
+    NSLog(@"retainStr:%p,%p", _rStr, &_rStr);
+    NSLog(@"copyStr:%p,%p",   _cStr, &_cStr);
+    NSLog(@"strongStr:%p,%p",   _sStr, &_sStr);
 }
 
 -(void)cancelAction:(UIButton *)sender
@@ -126,16 +153,37 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *ident = @"cell";
+    if (indexPath.row == 5) {
+        ident = @"cell_timer";
+    }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ident];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ident];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ident];
     }
     
     cell.textLabel.text = [[self.contentList objectAtIndex:indexPath.row] objectForKey:@"title"];
-    
+    if (indexPath.row == 5 && self.timerLabel == nil) {
+        self.timerLabel = [cell.contentView addLabelWithText:@"--"];
+        [_timerLabel makeConstraints:^(MASConstraintMaker *make) {
+            make.right.offset(-20);
+            make.centerY.equalTo(cell.contentView);
+        }];
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(runTimer) userInfo:nil repeats:YES];
+        //NSRunLoopCommonModes,UITrackingRunLoopMode 滚动时，也会更新UI
+//        [[NSRunLoop currentRunLoop] addTimer:timer forMode:UITrackingRunLoopMode];
+    }
     return cell;
 }
 
+-(void)runTimer
+{
+    [self dispatchAsyncMainQueue:^{
+        int v = [self.timerLabel.text intValue];
+        v ++;
+        
+        self.timerLabel.text = [NSString stringWithFormat:@"%d", v];
+    }];
+}
 
 #pragma mark UITableView Delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

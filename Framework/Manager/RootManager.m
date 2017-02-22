@@ -11,6 +11,7 @@
 
 @interface RootManager ()
 
+@property (nonatomic, readwrite, copy)   NSString *name;
 @property (nonatomic, strong)   NSDateFormatter *dateFormatter;
 
 @end
@@ -28,6 +29,14 @@
     
 }
 
+-(id)init
+{
+    if (self = [super init]) {
+        self.name = @"aaaaaa";
+    }
+    return self;
+}
+
 -(NSDateFormatter *)dateFormatter
 {
     if (_dateFormatter != nil) {
@@ -36,5 +45,7 @@
     self.dateFormatter = [[NSDateFormatter alloc] init];
     return _dateFormatter;
 }
+
+
 
 @end

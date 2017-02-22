@@ -162,7 +162,7 @@
 		ADC727411AB02E4900B567C1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC7273C1AB02E4900B567C1 /* BaseViewController.m */; };
 		ADC727421AB02E4900B567C1 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC7273F1AB02E4900B567C1 /* BaseView.m */; };
 		ADC727481AB02E8D00B567C1 /* AdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC727471AB02E8D00B567C1 /* AdModel.m */; };
-		ADC8B96A1C9908AF00534EE3 /* JamPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8B9691C9908AF00534EE3 /* JamPickerView.m */; };
+		ADC8B96A1C9908AF00534EE3 /* GJPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8B9691C9908AF00534EE3 /* GJPickerView.m */; };
 		ADCCD0031A6E347F00455FE2 /* UILabel+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCD0021A6E347F00455FE2 /* UILabel+Utils.m */; };
 		ADCCD0061A6E349900455FE2 /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCD0051A6E349900455FE2 /* UIView+Utils.m */; };
 		ADCCD00F1A6E34B700455FE2 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCD0081A6E34B700455FE2 /* NSString+Utils.m */; };
@@ -563,8 +563,8 @@
 		ADC7273F1AB02E4900B567C1 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		ADC727461AB02E8D00B567C1 /* AdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdModel.h; sourceTree = "<group>"; };
 		ADC727471AB02E8D00B567C1 /* AdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdModel.m; sourceTree = "<group>"; };
-		ADC8B9681C9908AF00534EE3 /* JamPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JamPickerView.h; sourceTree = "<group>"; };
-		ADC8B9691C9908AF00534EE3 /* JamPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JamPickerView.m; sourceTree = "<group>"; };
+		ADC8B9681C9908AF00534EE3 /* GJPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJPickerView.h; sourceTree = "<group>"; };
+		ADC8B9691C9908AF00534EE3 /* GJPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJPickerView.m; sourceTree = "<group>"; };
 		ADCCD0011A6E347F00455FE2 /* UILabel+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Utils.h"; sourceTree = "<group>"; };
 		ADCCD0021A6E347F00455FE2 /* UILabel+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Utils.m"; sourceTree = "<group>"; };
 		ADCCD0041A6E349900455FE2 /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
@@ -1558,8 +1558,8 @@
 				AD3D428F1AFA120F00BF341F /* BannerScrollView.m */,
 				AD2E0A5F1B180806001A5D61 /* ComboxPickerView.h */,
 				AD2E0A601B180806001A5D61 /* ComboxPickerView.m */,
-				ADC8B9681C9908AF00534EE3 /* JamPickerView.h */,
-				ADC8B9691C9908AF00534EE3 /* JamPickerView.m */,
+				ADC8B9681C9908AF00534EE3 /* GJPickerView.h */,
+				ADC8B9691C9908AF00534EE3 /* GJPickerView.m */,
 				AD2B231E1B1EAC33002526AB /* LockView.h */,
 				AD2B231F1B1EAC33002526AB /* LockView.m */,
 				AD49C1F91B8D9EE900268E48 /* PlaceholderTextView.h */,
@@ -2074,7 +2074,7 @@
 				ADE6DA311B8F07F80012148A /* BluetoothManager+Category.m in Sources */,
 				ADC726DC1AAFE8B700B567C1 /* UIButton+WebCache.m in Sources */,
 				ADC726E11AAFE8B700B567C1 /* UIImageView+WebCache.m in Sources */,
-				ADC8B96A1C9908AF00534EE3 /* JamPickerView.m in Sources */,
+				ADC8B96A1C9908AF00534EE3 /* GJPickerView.m in Sources */,
 				BF8467C41B74520A0023824D /* StatusResult.m in Sources */,
 				AD2E0A6A1B180856001A5D61 /* CJSONDeserializer.m in Sources */,
 			);

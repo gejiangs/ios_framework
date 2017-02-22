@@ -9,13 +9,13 @@
 #import "AddressViewController.h"
 #import "ComboxPickerView.h"
 #import "CJSONDeserializer.h"
-#import "JamPickerView.h"
+#import "GJPickerView.h"
 
-@interface AddressViewController ()<ComboxPickerViewDelegate, JamPickerViewDelegate>
+@interface AddressViewController ()<ComboxPickerViewDelegate, GJPickerViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *addressList;
 //@property (nonatomic, strong) ComboxPickerView *pickerView;
-@property (nonatomic, strong) JamPickerView *pickerView;
+@property (nonatomic, strong) GJPickerView *pickerView;
 
 @property (nonatomic, strong) NSString *proCode;
 @property (nonatomic, strong) NSString *cityCode;
@@ -29,6 +29,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"选择省、市、区";
     
     [self initUI];
     [self loadData];
@@ -57,7 +59,8 @@
 
 -(void)showComboxPickView:(id)sender
 {
-    self.pickerView = [JamPickerView showInView:self.view];
+    self.pickerView = [GJPickerView showInView:self.view];
+    _pickerView.titleLabel.text = @"选择省、市、区";
     _pickerView.delegate = self;
     
     NSInteger proSelectedRow = -1;
