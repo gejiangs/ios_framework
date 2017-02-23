@@ -159,13 +159,6 @@
     [self hideKeyboard];
 }
 
-
-#pragma mark - UITextViewDelegate -
--(void)textViewDidChange:(UITextView *)textView
-{
-    [self.textView textViewDidChange];
-}
-
 #pragma mark - UIScrollViewDelegate
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
