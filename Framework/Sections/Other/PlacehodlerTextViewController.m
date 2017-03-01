@@ -38,10 +38,6 @@
     _textView2.placeholder = @"写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢写点什么好呢。。。";
 }
 
--(void)textViewDidChange:(UITextView *)textView
-{
-    [self.textView textViewDidChange];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
